@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies (if any)
+node_modules/
+
+# Nested React app (landing page uses room-designer.html)
+room-designer-3d/
+
+# Local env
+.env
+.env.local
