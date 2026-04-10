@@ -2,1058 +2,1930 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Commercial Audio Equipment | Dynamic Media Music</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commercial Audio | Dynamic Media</title>
+  <meta name="description" content="Factory-direct commercial audio for restaurants. Free custom design, nationwide installation, one team from music to equipment." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --brand-primary: #0C3B63;
-      --accent-blue: #00aeef;
-      --cta-red: #00aeef;
-      --cta-red-hover: #0099d6;
-      --dark-bg: #0F172A;
-      --light-bg: #F5F7FA;
-      --text: #1F2937;
-      --text-muted: #4B5563;
-      --white: #ffffff;
-      --font: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --dm-blue: #00aeef;
+      --dm-blue-hover: #0099d6;
+      --bg-primary: #0d1117;
+      --bg-secondary: #121820;
+      --border: #1e2d3d;
+      --text-primary: #ffffff;
+      --text-secondary: #b0bec5;
+      --text-muted: #607080;
+      --lc-bg-white: #ffffff;
+      --lc-bg-soft: #f3f4f6;
+      --lc-text-primary: #1a2b3c;
+      --lc-text-body: #3d4f5c;
+      --lc-text-muted: #5c6b7a;
+      --lc-border: #cfd8dc;
+      --radius: 6px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 48px;
+      --space-8: 64px;
+      --space-9: 96px;
+      --font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: var(--font);
       font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--light-bg);
+      line-height: 1.7;
+      color: var(--lc-text-body);
+      background: var(--lc-bg-soft);
     }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); }
+    @media (min-width: 768px) { .container { padding: 0 32px; } }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    .container--narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* ----- Buttons ----- */
+    /* Hero */
+    .hero {
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-9) var(--space-4);
+      background-color: var(--bg-primary);
+      background-image:
+        linear-gradient(
+          to right,
+          rgba(13, 17, 23, 0.92) 0%,
+          rgba(13, 17, 23, 0.72) 32%,
+          rgba(13, 17, 23, 0.35) 52%,
+          rgba(13, 17, 23, 0) 78%
+        ),
+        url("assets/negley-stockman-3e_i3-KLhe4-unsplash.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 768px) { .hero { padding-left: 40px; padding-right: 40px; } }
+    .hero__inner { max-width: 1200px; margin: 0 auto; }
+    .hero__logo { display: inline-block; margin-bottom: 40px; }
+    .hero__logo img { width: 202px; max-width: 100%; height: auto; display: block; }
+    .hero h1 {
+      margin: 0;
+      max-width: 42rem;
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+    .hero .sub {
+      margin: var(--space-4) 0 0;
+      max-width: 36rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .hero-bullets {
+      list-style: none;
+      margin: var(--space-5) 0;
+      padding: 0;
+      max-width: 36rem;
+    }
+    .hero-bullets li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .hero-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--dm-blue);
+    }
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      max-width: 36rem;
+      margin-top: var(--space-5);
+    }
+    @media (min-width: 640px) {
+      .hero-ctas { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+    }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem 1.75rem;
-      font-family: var(--font);
-      font-size: 1rem;
+      min-width: 180px;
+      padding: 14px 32px;
+      font-family: inherit;
+      font-size: 0.88rem;
       font-weight: 600;
+      letter-spacing: 0.02em;
       text-decoration: none;
-      border-radius: 8px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
     }
-    .btn:hover { transform: translateY(-2px); }
     .btn--primary {
-      background: var(--cta-red);
-      color: var(--white);
-      border: none;
-      box-shadow: 0 4px 14px rgba(0, 174, 239, 0.35);
+      background: var(--dm-blue);
+      border-color: var(--dm-blue);
+      color: #fff;
     }
-    .btn--primary:hover { background: var(--cta-red-hover); box-shadow: 0 8px 24px rgba(0, 174, 239, 0.45); }
-    .btn--secondary {
+    .btn--primary:hover {
+      background: var(--dm-blue-hover);
+      border-color: var(--dm-blue-hover);
+      color: #fff;
+    }
+    .btn--ghost {
       background: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: var(--text-primary);
     }
-    .btn--secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.12); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-    .btn--outline {
+    .btn--ghost:hover { border-color: #fff; background: rgba(255, 255, 255, 0.05); }
+    .btn--primary-light {
+      background: #fff;
+      border-color: #fff;
+      color: var(--dm-blue);
+    }
+    .btn--primary-light:hover { background: rgba(255, 255, 255, 0.92); }
+    .btn--ghost-light {
       background: transparent;
-      color: var(--brand-primary);
-      border: 2px solid var(--brand-primary);
+      border-color: #fff;
+      color: #fff;
     }
-    .btn--outline:hover { background: var(--brand-primary); color: var(--white); box-shadow: 0 4px 16px rgba(12, 59, 99, 0.25); }
-    a.accent-link { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
-    a.accent-link:hover { text-decoration: underline; }
+    .btn--ghost-light:hover { background: rgba(255, 255, 255, 0.12); }
+    .cta-caption {
+      margin: 6px 0 0;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .hero-cta-wrap { display: flex; flex-direction: column; align-items: flex-start; }
 
-    /* ----- Wave divider ----- */
-    .wave-divider {
-      width: 100%;
-      height: 80px;
-      fill: var(--light-bg);
-      overflow: hidden;
+    /* Section titles */
+    .section-head {
+      text-align: center;
+      margin-bottom: var(--space-4);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--lc-text-primary);
     }
-    .wave-divider--dark { fill: var(--dark-bg); }
-    .wave-divider svg { display: block; width: 100%; height: 100%; animation: waveShift 8s ease-in-out infinite; }
-    @keyframes waveShift {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(4px); }
+    .section-sub {
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto var(--space-8);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
     }
 
-    /* ----- HERO (dark) ----- */
-    .hero {
-      background: var(--dark-bg);
-      color: var(--white);
-      padding: 100px 0;
-      position: relative;
-      overflow: hidden;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
+    /* Built for Dynamic Media — copy left, photo right */
+    .why {
+      border-top: 1px solid var(--lc-border);
+      border-bottom: 1px solid var(--lc-border);
+      background: var(--lc-bg-white);
+      padding: var(--space-7) var(--space-4);
     }
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--brand-primary) 0%, var(--dark-bg) 50%, #0a1628 100%);
-      z-index: 0;
-    }
-    .hero__bg-image {
-      position: absolute;
-      inset: 0;
-      background-image: url('assets/b929e7a3-6dc8-4f0c-bb34-c9488a9dd81d.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      opacity: 0.18;
-      z-index: 0;
-    }
-    @media (max-width: 900px) { .hero__bg-image { background-attachment: scroll; } }
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(105deg, var(--dark-bg) 0%, transparent 45%, transparent 70%, var(--dark-bg) 100%);
-      z-index: 1;
-    }
-    .hero__waves {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      opacity: 0.12;
-      pointer-events: none;
-    }
-    .hero__waves svg {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 40%;
-    }
-    .hero .container {
-      position: relative;
-      z-index: 2;
+    @media (min-width: 768px) { .why { padding-left: 32px; padding-right: 32px; } }
+    .why-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: var(--space-7);
       align-items: center;
     }
-    @media (max-width: 900px) {
-      .hero .container { grid-template-columns: 1fr; text-align: center; }
-      .hero__overlay { background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 40%, var(--dark-bg) 100%); }
+    @media (min-width: 900px) {
+      .why-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(32px, 5vw, 72px);
+      }
     }
-    .hero__content h1 {
-      font-size: clamp(1.875rem, 4vw, 2.75rem);
-      font-weight: 700;
-      margin: 0 0 1.25rem;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+    .why-copy .section-head {
+      text-align: left;
+      margin-bottom: var(--space-4);
     }
-    .hero__content .subheadline {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      opacity: 0.95;
-      max-width: 42ch;
-      margin: 0 0 2rem;
-      line-height: 1.6;
-    }
-    @media (max-width: 900px) { .hero__content .subheadline { margin-left: auto; margin-right: auto; } }
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    @media (max-width: 900px) { .hero-ctas { justify-content: center; } }
-    .hero .support-line { font-size: 0.9rem; opacity: 0.9; }
-    .hero__visual {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero__visual img {
-      max-width: 100%;
-      max-height: 460px;
-      object-fit: contain;
-      filter: drop-shadow(0 24px 48px rgba(0,0,0,0.4));
-      animation: heroFloat 6s ease-in-out infinite;
-    }
-    @keyframes heroFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    .hero__sound-rings {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-    .hero__sound-rings span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border: 2px solid var(--accent-blue);
-      border-radius: 50%;
-      opacity: 0.3;
-      animation: soundPulse 3s ease-out infinite;
-    }
-    .hero__sound-rings span:nth-child(1) { width: 120px; height: 120px; margin: -60px 0 0 -60px; animation-delay: 0s; }
-    .hero__sound-rings span:nth-child(2) { width: 180px; height: 180px; margin: -90px 0 0 -90px; animation-delay: 0.5s; }
-    .hero__sound-rings span:nth-child(3) { width: 260px; height: 260px; margin: -130px 0 0 -130px; animation-delay: 1s; }
-    @keyframes soundPulse {
-      0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0.4; }
-      100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
-    }
-
-    /* ----- Social proof (card layout) ----- */
-    .social-proof {
-      background: #e6e7e8;
-      padding: 2.5rem 0;
-      border-bottom: none;
-    }
-    .social-proof .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      align-items: stretch;
-    }
-    .social-proof-card {
-      flex: 1;
-      min-width: 240px;
-      max-width: 320px;
-      background: var(--white);
-      border-radius: 12px;
-      padding: 1.75rem 1.5rem;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .social-proof-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-    }
-    .social-proof-check {
-      display: inline-block;
-      width: 1.75rem;
-      height: 1.75rem;
-      flex-shrink: 0;
-      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Ccircle cx="12" cy="12" r="11" fill="%2300aeef"/%3E%3Cpath d="M7 12l3.5 3.5L17 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/%3E%3C/svg%3E');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .social-proof-stat {
-      font-size: clamp(3rem, 4vw, 4rem);
-      font-weight: 700;
-      color: var(--brand-primary);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-    .social-proof-desc {
+    .why-copy .dm-customer-intro {
+      max-width: 38rem;
       margin: 0;
-      font-size: clamp(0.875rem, 1.5vw, 1rem);
-      font-weight: 500;
-      color: #3A3A3A;
-      line-height: 1.45;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
     }
-
-    /* ----- Section defaults ----- */
-    section {
-      padding: 100px 0;
+    .why-copy .dm-customer-intro + .dm-customer-intro { margin-top: 0.75rem; }
+    .why-copy .dm-customer-bullets {
+      max-width: 38rem;
+      margin: var(--space-6) 0 0;
+      padding: 0;
+      list-style: none;
     }
-    .section-title {
-      font-size: clamp(1.5rem, 3vw, 2.25rem);
-      font-weight: 700;
-      color: var(--brand-primary);
-      margin: 0 0 1.25rem;
-      text-align: center;
-      letter-spacing: -0.02em;
-    }
-    .section-intro {
-      max-width: 60ch;
-      margin: 0 auto 2rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-weight: 400;
+    .why-copy .dm-customer-bullets li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.65rem;
+      text-align: left;
+      color: var(--lc-text-body);
       line-height: 1.6;
     }
-    .section--dark { background: var(--dark-bg); color: var(--white); }
-    .section--dark .section-title { color: var(--white); }
-    .section--dark .section-intro { color: rgba(255,255,255,0.85); }
-    .section--light { background: var(--light-bg); color: var(--text); }
-
-    /* ----- Why Upgrade (light) - Icon feature panels ----- */
-    #why-upgrade { background: var(--light-bg); }
-    #why-upgrade .section-intro { color: #3A3A3A; }
-    #why-upgrade .benefit-card p { color: #3A3A3A; }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    @media (max-width: 900px) { .benefits-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 520px) { .benefits-grid { grid-template-columns: 1fr; } }
-    .benefit-card {
-      background: var(--white);
-      padding: 2rem 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #E5E7EB;
-      text-align: center;
-      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .benefit-card:hover {
-      background: var(--brand-primary);
-      color: var(--white);
-      border-color: var(--brand-primary);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(12, 59, 99, 0.2);
-    }
-    .benefit-card:hover h3 { color: var(--white); }
-    #why-upgrade .benefit-card:hover p { color: var(--white); }
-    .benefit-card:hover .benefit-icon { color: var(--accent-blue); }
-    .benefit-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 1rem;
-      color: var(--brand-primary);
-      transition: color 0.3s ease;
-    }
-    .benefit-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--brand-primary);
-      margin: 0 0 0.5rem;
-    }
-    .benefit-card p { margin: 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
-
-    /* ----- Full-width env imagery ----- */
-    .env-section {
-      height: 320px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .env-section::before {
-      content: '';
+    .why-copy .dm-customer-bullets li::before {
+      content: "";
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(12, 59, 99, 0.5) 0%, rgba(15, 23, 42, 0.7) 100%);
+      left: 0;
+      top: 0.55em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--dm-blue);
     }
-    .env-section--retail { background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80'); }
-    .env-section--restaurant { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80'); }
-    .env-section--fitness { background-image: url('assets/artificial-photography-vB5qtt8X4NA-unsplash.jpg'); }
+    .why-media {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--lc-border);
+      box-shadow: 0 16px 48px rgba(26, 43, 60, 0.08);
+    }
+    .why-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
 
-    /* ----- Audio Design (dark) - Floorplan + copy ----- */
-    #free-design { background: var(--dark-bg); padding: 100px 0; }
-    .audio-design__inner {
+    /* Visualizer */
+    #visualizer {
+      border-bottom: 1px solid var(--lc-border);
+      background: var(--lc-bg-soft);
+      padding: var(--space-9) var(--space-4);
+    }
+    @media (min-width: 768px) { #visualizer { padding-left: 32px; padding-right: 32px; } }
+    .viz-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: var(--space-8);
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
     }
-    @media (max-width: 900px) { .audio-design__inner { grid-template-columns: 1fr; } }
-    /* 3D room designer (embedded app) */
-    .room-designer-3d {
-      position: relative;
-      background: rgba(255,255,255,0.06);
-      border-radius: 16px;
-      overflow: hidden;
-      aspect-ratio: 16/10;
-      max-width: 720px;
-      width: 100%;
-      margin: 0 auto;
-      border: 1px solid #00aeef;
+    @media (min-width: 1024px) {
+      .viz-grid { grid-template-columns: minmax(0, 45fr) minmax(0, 55fr); gap: 80px; }
     }
-    .room-designer-3d iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      border: none;
+    .viz-copy h2 {
+      margin: 0 0 var(--space-4);
+      max-width: 520px;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--lc-text-primary);
     }
-    .audio-design__copy .section-title { text-align: left; color: var(--white); }
-    @media (max-width: 900px) { .audio-design__copy .section-title { text-align: center; } }
-    .audio-design__copy .section-intro { text-align: left; margin-left: 0; margin-right: 0; color: var(--white); }
-    @media (max-width: 900px) { .audio-design__copy .section-intro { text-align: center; margin-left: auto; margin-right: auto; } }
-    .design-list {
-      list-style: none;
+    .viz-copy > p {
+      margin: 0;
+      max-width: 520px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
+    }
+    .viz-copy > p + p { margin-top: 1rem; }
+    .viz-tool {
+      border-radius: var(--radius);
+      border: 1px solid var(--lc-border);
+      background: var(--lc-bg-white);
+      padding: var(--space-6);
+      box-shadow: 0 16px 48px rgba(26, 43, 60, 0.08);
+    }
+    .viz-tool-title {
+      margin: 0 0 var(--space-5);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--lc-text-muted);
+    }
+    .viz-field { margin-bottom: var(--space-5); }
+    .viz-field:last-of-type { margin-bottom: 0; }
+    .viz-label-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px 8px;
+      margin-bottom: 8px;
+    }
+    .viz-label-row label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--lc-text-primary);
+    }
+    .viz-required { color: #c62828; font-weight: 700; }
+    .viz-info {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.125rem;
+      height: 1.125rem;
       padding: 0;
-      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--lc-border);
+      border-radius: 50%;
+      background: var(--lc-bg-soft);
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--lc-text-muted);
+      cursor: help;
+      line-height: 1;
     }
-    .design-list li {
-      padding: 0.5rem 0 0.5rem 1.75rem;
+    .viz-select,
+    .viz-input {
+      width: 100%;
+      padding: 11px 12px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      color: var(--lc-text-primary);
+      background: var(--lc-bg-white);
+      border: 1px solid var(--lc-border);
+      border-radius: var(--radius);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .viz-select:focus,
+    .viz-input:focus {
+      outline: none;
+      border-color: var(--dm-blue);
+      box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.2);
+    }
+    .viz-select:invalid { color: var(--lc-text-muted); }
+    .viz-input-suffix-wrap {
+      display: flex;
+      align-items: stretch;
+      border: 1px solid var(--lc-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.15s ease;
+    }
+    .viz-input-suffix-wrap:focus-within {
+      border-color: var(--dm-blue);
+      box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.2);
+    }
+    .viz-input-suffix-wrap .viz-input {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .viz-input-suffix-wrap .viz-input:focus { box-shadow: none; }
+    .viz-input-suffix {
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--lc-text-body);
+      background: var(--lc-bg-soft);
+      border-left: 1px solid var(--lc-border);
+      white-space: nowrap;
+    }
+    .viz-form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding-top: var(--space-5);
+      margin-top: var(--space-5);
+      border-top: 1px solid var(--lc-border);
+    }
+    .viz-form-actions .btn {
+      min-width: 200px;
+    }
+    .btn--on-card-primary {
+      background: var(--dm-blue);
+      border-color: var(--dm-blue);
+      color: #fff;
+    }
+    .btn--on-card-primary:hover {
+      background: var(--dm-blue-hover);
+      border-color: var(--dm-blue-hover);
+      color: #fff;
+    }
+    .viz-result {
+      display: none;
+      margin-top: var(--space-5);
+      padding: var(--space-5);
+      border-radius: var(--radius);
+      background: var(--lc-bg-soft);
+      border: 1px solid var(--lc-border);
+    }
+    .viz-result.is-visible { display: block; }
+    .viz-result h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--lc-text-primary);
+    }
+    .viz-result p { margin: 0; font-size: 0.9375rem; line-height: 1.65; color: var(--lc-text-body); }
+    .viz-result p + p { margin-top: 10px; }
+
+    /* Value props — same dark band as .process (no card panels) */
+    .values {
+      background: var(--bg-primary);
+      padding: var(--space-9) var(--space-4);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    @media (min-width: 768px) { .values { padding-left: 32px; padding-right: 32px; } }
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(var(--space-6), 4vw, var(--space-8));
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    @media (min-width: 640px) { .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .values-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(24px, 2.5vw, 36px); } }
+    .value-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: 0;
+      min-height: 0;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .value-card__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(52px, 12vw, 64px);
+      height: clamp(52px, 12vw, 64px);
+      flex-shrink: 0;
+      color: var(--dm-blue);
+      background: rgba(0, 174, 239, 0.12);
+      border: 1px solid rgba(0, 174, 239, 0.35);
+    }
+    .value-card__icon--round { border-radius: 50%; }
+    .value-card__icon--tile { border-radius: 16px; }
+    .value-card__icon svg {
+      width: clamp(26px, 6vw, 30px);
+      height: clamp(26px, 6vw, 30px);
+    }
+    .value-card h3 {
+      margin: 0;
+      font-size: clamp(1.05rem, 1.9vw, 1.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    .value-card p {
+      margin: 0;
+      font-size: clamp(0.9rem, 1.6vw, 0.97rem);
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+
+    /* Framing */
+    .framing {
+      padding: var(--space-9) var(--space-4);
+      background: var(--lc-bg-white);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    .framing-layout {
+      display: grid;
+      gap: var(--space-7);
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .framing-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: clamp(32px, 5vw, 64px);
+        align-items: center;
+      }
+      .framing-head {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .framing-carousel-col {
+        grid-column: 2;
+        grid-row: 1;
+      }
+    }
+    .framing-head {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-3);
+      max-width: 42rem;
+    }
+    .framing .section-head {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+      max-width: none;
+    }
+    .framing-carousel-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+    }
+    .framing-carousel-wrap {
+      width: 100%;
+      max-width: 28rem;
+      margin: 0;
+      overflow: hidden;
+      --framing-slide-h: clamp(5.5rem, 14vw, 8rem);
+    }
+    @media (min-width: 900px) {
+      .framing-carousel-wrap { max-width: min(100%, 34rem); }
+    }
+    .framing-carousel {
+      height: var(--framing-slide-h);
+      overflow: hidden;
+    }
+    .framing-carousel__track {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transform: translateY(calc(var(--framing-slide, 0) * var(--framing-slide-h) * -1));
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .framing-carousel__track li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55em;
+      height: var(--framing-slide-h);
+      margin: 0;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      text-align: center;
+      color: var(--lc-text-primary);
+    }
+    .framing-carousel__track li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 0.55em;
+      height: 0.28em;
+      margin-top: 0.08em;
+      border: solid var(--dm-blue);
+      border-width: 0 0 0.11em 0.11em;
+      border-radius: 0 0 0 1px;
+      transform: rotate(-48deg);
+      background: none;
+    }
+    .framing-carousel__status {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+    }
+    .framing--static .framing-carousel-wrap {
+      height: auto;
+      overflow: visible;
+    }
+    .framing--static .framing-carousel {
+      height: auto;
+      overflow: visible;
+    }
+    .framing--static .framing-carousel__track {
+      transform: none !important;
+      transition: none !important;
+    }
+    .framing--static .framing-carousel__track li {
+      height: auto;
+      min-height: 0;
+      padding: 0.35rem 0.5rem;
+      margin-bottom: 0.75rem;
+      justify-content: center;
+    }
+    .framing--static .framing-carousel__track li.is-clone {
+      display: none;
+    }
+    .framing-close {
+      text-align: left;
+      max-width: 42rem;
+      margin: 0;
+      font-weight: 600;
+      color: var(--lc-text-primary);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .framing-carousel__track { transition: none; }
+    }
+
+    /* Products */
+    .products-section { padding: var(--space-9) var(--space-4); background: var(--lc-bg-soft); }
+    .products-grid {
+      display: grid;
+      gap: var(--space-6);
+      max-width: 1200px;
+      margin: 0 auto;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px) {
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .product-card--full { grid-column: 1 / -1; }
+    }
+    .product-card {
+      margin: 0;
+      background: linear-gradient(180deg, #f4fafc 0%, #ffffff 42%, #ffffff 100%);
+      border: 1px solid rgba(0, 174, 239, 0.42);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 28px rgba(26, 43, 60, 0.07);
+    }
+    .product-card__main { padding: var(--space-6); }
+    .product-card__top {
+      display: grid;
+      gap: var(--space-5);
+      align-items: start;
+      margin-bottom: var(--space-5);
+    }
+    @media (min-width: 640px) {
+      .product-card__top { grid-template-columns: minmax(140px, 180px) 1fr; align-items: center; }
+    }
+    .product-card__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+      padding: var(--space-4);
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      border: 1px solid rgba(0, 174, 239, 0.15);
+    }
+    .product-card__img img { max-width: 100%; max-height: 200px; width: auto; object-fit: contain; }
+    .product-card--full .product-card__img img { max-height: 200px; max-width: 100%; }
+    .product-card__title {
+      margin: 0 0 10px;
+      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--lc-text-primary);
+    }
+    .product-ideal-for {
+      margin: 0 0 8px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dm-blue);
+    }
+    .products-section .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+    .products-section .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--dm-blue);
+      background: rgba(0, 174, 239, 0.12);
+      border: 1px solid rgba(0, 174, 239, 0.35);
+      border-radius: 999px;
+    }
+    .products-section .tag::before { display: none; }
+    .product-desc {
+      margin: 0 0 1rem;
+      font-size: 0.9375rem;
+      color: var(--lc-text-body);
+      line-height: 1.65;
+    }
+    .product-rule {
+      margin: var(--space-5) 0;
+      border: none;
+      border-top: 1px solid var(--lc-border);
+    }
+    .product-kicker {
+      margin: 0 0 12px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dm-blue);
+    }
+    .product-benefits {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--lc-text-body);
+      font-size: 0.9375rem;
+      line-height: 1.55;
+    }
+    .product-benefits li {
       position: relative;
-      color: rgba(255,255,255,0.9);
+      padding-left: 1.5rem;
+      margin-bottom: 10px;
     }
-    .design-list li::before {
-      content: '•';
+    .product-benefits li:last-child { margin-bottom: 0; }
+    .product-benefits li::before {
+      content: "";
       position: absolute;
       left: 0;
-      color: var(--accent-blue);
-      font-weight: 700;
+      top: 0.4em;
+      width: 0.5rem;
+      height: 0.25rem;
+      border: solid var(--dm-blue);
+      border-width: 0 0 2px 2px;
+      transform: rotate(-52deg);
     }
-    .design-cta { margin-top: 2rem; }
-    @media (max-width: 900px) { .design-cta { text-align: center; } }
-    .audio-design__copy p { color: var(--white); }
-    .audio-design__copy p.text-center { text-align: left; }
-    @media (max-width: 900px) { .audio-design__copy p.text-center { text-align: center; } }
-
-    /* ----- Products (light) - Premium panels ----- */
-    #products { background: var(--light-bg); }
-    .products {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
+    /* Commercial amplifier — same top/body rhythm as speaker cards; full width in grid only */
+    .product-footer {
+      border-top: 1px solid var(--lc-border);
+      padding: var(--space-5) var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
       align-items: stretch;
-      margin-top: 2.5rem;
+      background: rgba(255, 255, 255, 0.65);
     }
-    @media (max-width: 900px) { .products { grid-template-columns: 1fr; } }
-    .product-card {
-      background: var(--white);
-      border-radius: 16px;
-      overflow: visible;
-      border: 1px solid #E5E7EB;
-      box-shadow: 0 4px 24px rgba(12, 59, 99, 0.06);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    .product-footer .btn {
+      width: 100%;
+      max-width: none;
+      text-decoration: none;
+      background: var(--dm-blue);
+      border-color: var(--dm-blue);
+      color: #fff;
     }
-    .product-card:hover {
-      box-shadow: 0 20px 48px rgba(12, 59, 99, 0.12);
-      transform: translateY(-4px);
-    }
-    .product-card__image-wrap {
-      position: relative;
-      padding: 3rem 2rem;
-      background: linear-gradient(180deg, #f0f7fc 0%, var(--light-bg) 100%);
-      border-radius: 16px 16px 0 0;
-    }
-    .product-card__image {
-      aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .product-card__image img {
-      max-width: 95%;
-      max-height: 280px;
-      object-fit: contain;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.1));
-    }
-    .product-card:hover .product-card__image img {
-      transform: scale(1.04);
-      filter: drop-shadow(0 16px 32px rgba(0,0,0,0.15));
-    }
-    .product-card__body { padding: 2rem; }
-    .product-card__body h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--brand-primary);
-      margin: 0 0 0.75rem;
-    }
-    .product-card__body .desc { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; }
-    .product-card__body .key-benefits { margin: 1rem 0; }
-    .product-card__body .key-benefits strong { display: block; margin-bottom: 0.5rem; color: var(--brand-primary); }
-    .product-card__body ul {
+    .product-footer .btn:hover { background: var(--dm-blue-hover); border-color: var(--dm-blue-hover); color: #fff; }
+    .schedule-link {
+      text-align: center;
+      font-size: 0.8125rem;
       margin: 0;
-      padding-left: 1.25rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
     }
-    .product-ctas { margin-top: 1.25rem; }
+    .schedule-link a { color: var(--dm-blue); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+    .schedule-link a:hover { color: var(--dm-blue-hover); }
 
-    /* ----- Interest modal ----- */
-    .interest-modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 2000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
+    /* Process */
+    .process {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-primary);
+      padding: var(--space-9) var(--space-4);
     }
-    .interest-modal-overlay.is-open { display: flex; }
-    .interest-modal {
-      background: var(--white);
-      border-radius: 12px;
-      max-width: 420px;
-      width: 100%;
-      padding: 1.75rem;
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
-    }
-    .interest-modal h3 {
-      margin: 0 0 1.25rem;
-      font-size: 1.25rem;
-      color: var(--brand-primary);
-    }
-    .interest-modal .form-row { margin-bottom: 1rem; }
-    .interest-modal label {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.35rem;
-    }
-    .interest-modal input[type="text"],
-    .interest-modal input[type="tel"] {
-      width: 100%;
-      padding: 0.6rem 0.75rem;
-      font-family: var(--font);
-      font-size: 1rem;
-      border: 1px solid var(--dm-border, #E5E7EB);
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-    .interest-modal .checkbox-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 1rem 0 1.25rem;
-    }
-    .interest-modal input[type="checkbox"] { width: auto; margin: 0; }
-    .interest-modal .checkbox-row label { margin: 0; font-weight: 500; }
-    .interest-modal .modal-actions {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: flex-end;
-    }
-    .interest-modal .btn--secondary-modal {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--text-muted);
-    }
-    .interest-modal .btn--secondary-modal:hover { background: #f3f4f6; }
-
-    /* ----- Process (light) - Timeline ----- */
-    #process { background: var(--light-bg); }
-    .timeline {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-      align-items: start;
-      gap: 0;
-      margin: 3rem 0 2rem;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media (max-width: 768px) {
-      .timeline {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .timeline__connector { display: none; }
-    }
-    .timeline__step {
-      text-align: center;
-      padding: 0 0.5rem;
-    }
-    .timeline__num {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--brand-primary);
-      color: var(--white);
+    @media (min-width: 768px) { .process { padding-left: 32px; padding-right: 32px; } }
+    .process h2 {
+      margin: 0 0 var(--space-8);
+      max-width: 880px;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
       font-weight: 700;
-      font-size: 1.25rem;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+    .process-grid {
+      display: grid;
+      gap: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .process-grid { grid-template-columns: repeat(3, 1fr); gap: 0; }
+      .process-col { padding: 0 var(--space-6); border-left: 1px solid var(--border); }
+      .process-col:first-child { padding-left: 0; border-left: none; }
+    }
+    .process-num {
+      width: 48px;
+      height: 48px;
+      margin-bottom: var(--space-4);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 1rem;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 50%;
+      border: 2px solid var(--dm-blue);
+      font-weight: 600;
+      color: var(--text-primary);
     }
-    .timeline__step.visible .timeline__num {
-      transform: scale(1);
-      box-shadow: 0 4px 20px rgba(12, 59, 99, 0.3);
-    }
-    .timeline__step strong {
-      display: block;
-      color: var(--brand-primary);
-      margin-bottom: 0.35rem;
-      font-size: 1rem;
-    }
-    .timeline__step p { margin: 0; font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
-    .timeline__connector {
-      width: 100%;
-      max-width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--brand-primary), var(--accent-blue));
-      margin-top: 28px;
-      opacity: 0.5;
-    }
+    .process-col h3 { margin: 0; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; color: var(--text-primary); }
+    .process-col p { margin: var(--space-3) 0 0; color: var(--text-secondary); }
     .process-callout {
+      margin-top: var(--space-8);
+      margin-left: calc(-1 * var(--space-4));
+      margin-right: calc(-1 * var(--space-4));
+      padding: var(--space-9) var(--space-4) calc(var(--space-9) + var(--space-4));
       text-align: center;
-      margin-top: 4rem;
-      margin-bottom: 2rem;
-      padding: 1.75rem 2rem;
-      background: rgba(12, 59, 99, 0.08);
-      border-radius: 12px;
-      font-size: 1.2rem;
-      line-height: 1.5;
-      color: var(--text);
-      border: 1px solid rgba(12, 59, 99, 0.12);
+      background: linear-gradient(180deg, #0a0e14 0%, #0d1117 100%);
+      border-top: 1px solid rgba(0, 174, 239, 0.22);
+      border-radius: 10px;
+    }
+    @media (min-width: 768px) {
+      .process-callout {
+        margin-left: -32px;
+        margin-right: -32px;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+    }
+    .process-callout__headline {
+      margin: 0 auto;
+      max-width: 28em;
+      font-size: clamp(1.45rem, 3.8vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+    .process-callout__lead { color: var(--text-primary); }
+    .process-callout__accent { color: var(--dm-blue); }
+    .process-callout__rule {
+      display: block;
+      width: min(11rem, 42%);
+      height: 3px;
+      margin: var(--space-6) auto 0;
+      background: var(--dm-blue);
+      border-radius: 2px;
+      opacity: 0.95;
     }
 
-    /* ----- Final CTA (dark) ----- */
-    .final-cta {
-      background: #111827;
-      color: var(--white);
-      padding: 100px 0;
-      text-align: center;
-      position: relative;
+    /* One team — H2 left, swipe carousel right (matches framing treatment) */
+    .one-team {
+      padding: var(--space-9) var(--space-4);
+      background: var(--lc-bg-soft);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    .one-team-layout {
+      display: grid;
+      gap: var(--space-7);
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .one-team-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: clamp(32px, 5vw, 64px);
+        align-items: center;
+      }
+    }
+    .one-team-head {
+      max-width: 42rem;
+    }
+    .one-team .section-head {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+      max-width: none;
+    }
+    .one-team-carousel-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+    }
+    .one-team-carousel-wrap {
+      width: 100%;
+      max-width: 28rem;
+      margin: 0;
+      overflow: hidden;
+      --one-team-slide-h: clamp(5.5rem, 14vw, 8rem);
+    }
+    @media (min-width: 900px) {
+      .one-team-carousel-wrap { max-width: min(100%, 34rem); }
+    }
+    .one-team-carousel {
+      height: var(--one-team-slide-h);
       overflow: hidden;
     }
-    .final-cta__bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.15;
+    .one-team-carousel__track {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transform: translateY(calc(var(--one-team-slide, 0) * var(--one-team-slide-h) * -1));
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
     }
-    .final-cta__overlay {
-      position: absolute;
-      inset: 0;
-      background: #111827;
-    }
-    .final-cta .container { position: relative; z-index: 1; }
-    .final-cta .section-title { color: var(--white); font-size: clamp(1.75rem, 4vw, 2.5rem); }
-    .final-cta .section-intro { color: rgba(255,255,255,0.95); }
-    .final-cta .btn--primary {
-      margin-top: 1rem;
-      padding: 1.125rem 2rem;
-      font-size: 1.05rem;
-    }
-    .final-cta .btn--primary:hover { box-shadow: 0 8px 32px rgba(0, 174, 239, 0.5); }
-
-    /* ----- Reveal animation ----- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .timeline__step { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .timeline__step.visible { opacity: 1; transform: translateY(0); }
-    .timeline__step .timeline__num { transition: transform 0.4s ease, box-shadow 0.4s ease; }
-    .timeline__step:not(.visible) .timeline__num { transform: scale(0.85); }
-    .timeline__step.visible .timeline__num { transform: scale(1); box-shadow: 0 4px 20px rgba(12, 59, 99, 0.3); }
-
-    /* ----- Sticky CTA ----- */
-    .sticky-cta {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 1000;
-    }
-    .sticky-cta a {
+    .one-team-carousel__track li {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem 1.5rem;
-      background: var(--cta-red);
-      color: var(--white);
-      font-family: var(--font);
-      font-weight: 600;
+      gap: 0.55em;
+      height: var(--one-team-slide-h);
+      margin: 0;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      text-align: center;
+      color: var(--lc-text-primary);
+    }
+    .one-team-carousel__track li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 0.55em;
+      height: 0.28em;
+      margin-top: 0.08em;
+      border: solid var(--dm-blue);
+      border-width: 0 0 0.11em 0.11em;
+      border-radius: 0 0 0 1px;
+      transform: rotate(-48deg);
+      background: none;
+    }
+    .one-team-carousel__status {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+    }
+    .one-team--static .one-team-carousel-wrap {
+      height: auto;
+      overflow: visible;
+    }
+    .one-team--static .one-team-carousel {
+      height: auto;
+      overflow: visible;
+    }
+    .one-team--static .one-team-carousel__track {
+      transform: none !important;
+      transition: none !important;
+    }
+    .one-team--static .one-team-carousel__track li {
+      height: auto;
+      min-height: 0;
+      padding: 0.35rem 0.5rem;
+      margin-bottom: 0.75rem;
+      justify-content: center;
+    }
+    .one-team--static .one-team-carousel__track li.is-clone {
+      display: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .one-team-carousel__track { transition: none; }
+    }
+
+    /* Testimonial */
+    .testimonial {
+      padding: var(--space-9) var(--space-4);
+      background: var(--lc-bg-soft);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    .testimonial__wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .testimonial-card {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: var(--space-7) var(--space-6) calc(var(--space-8) + 24px);
+      background: var(--lc-bg-white);
+      border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(26, 43, 60, 0.1);
+      text-align: left;
+    }
+    .testimonial-card__mark {
+      display: block;
+      margin: 0 0 4px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.5rem, 8vw, 4.5rem);
+      line-height: 0.75;
+      font-weight: 700;
+      color: var(--dm-blue);
+    }
+    .testimonial-card__kicker {
+      margin: 0 0 var(--space-5);
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--lc-text-primary);
+    }
+    .testimonial-card__quote {
+      margin: 0 0 var(--space-6);
+      padding: 0;
+      border: 0;
+      font-size: clamp(1rem, 2.1vw, 1.125rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--lc-text-body);
+      font-style: normal;
+    }
+    .testimonial-card__quote p {
+      margin: 0;
+    }
+    .testimonial-card__cite {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .testimonial-card__name {
       font-size: 1rem;
+      font-weight: 700;
+      color: var(--lc-text-primary);
+    }
+    .testimonial-card__role {
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--lc-text-body);
+    }
+    .testimonial-card__watermark {
+      position: absolute;
+      right: var(--space-5);
+      bottom: var(--space-5);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(26, 43, 60, 0.05);
+      border: 1px solid rgba(26, 43, 60, 0.08);
+    }
+    /* Final CTA */
+    .final {
+      background: var(--lc-bg-soft);
+      padding: var(--space-9) var(--space-4);
+      text-align: center;
+      border-top: 1px solid var(--lc-border);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    .final h2 {
+      margin: 0 0 var(--space-8);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--lc-text-primary);
+    }
+    .final-ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      width: 100%;
+    }
+    .final-cta-row {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-4);
+      width: 100%;
+      max-width: 22rem;
+    }
+    @media (min-width: 640px) {
+      .final-cta-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: none;
+        width: auto;
+      }
+      .final-cta-row .btn {
+        flex: 0 0 auto;
+        min-height: 48px;
+        box-sizing: border-box;
+      }
+    }
+    .btn--ghost-final {
+      background: transparent;
+      border: 2px solid var(--lc-text-primary);
+      color: var(--lc-text-primary);
+    }
+    .btn--ghost-final:hover {
+      border-color: var(--dm-blue);
+      color: var(--dm-blue);
+      background: rgba(0, 174, 239, 0.06);
+    }
+    /* Site footer */
+    .site-footer {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border-top: 1px solid var(--border);
+    }
+    .site-footer__logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(1.25rem, 4vw, 2.75rem);
+      padding: var(--space-8) var(--space-4) var(--space-7);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .site-footer__logo {
+      display: flex;
+      align-items: center;
+      line-height: 0;
+      opacity: 0.95;
+      transition: opacity 0.15s ease;
+    }
+    .site-footer__logo:hover { opacity: 1; }
+    .site-footer__logo img {
+      height: clamp(32px, 5vw, 42px);
+      width: auto;
+      display: block;
+    }
+    .site-footer__commercial-link {
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(0, 174, 239, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      color: #fff;
     }
-    .sticky-cta a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(0, 174, 239, 0.5);
-      background: var(--cta-red-hover);
-      color: var(--white);
+    .site-footer__commercial-link:hover { color: #fff; opacity: 0.92; }
+    .site-footer__commercial-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .sticky-cta .sticky-cta__desktop { display: block; }
-    .sticky-cta .sticky-cta__mobile { display: none; }
-    @media (max-width: 600px) {
-      .sticky-cta .sticky-cta__desktop { display: none; }
-      .sticky-cta .sticky-cta__mobile { display: block; }
-      .sticky-cta { bottom: 16px; right: 16px; }
+    .site-footer__commercial-dm {
+      font-size: clamp(1.75rem, 3.5vw, 2.125rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1;
     }
+    .site-footer__commercial-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      line-height: 1.1;
+    }
+    .site-footer__commercial-sub {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+    }
+    .site-footer__commercial-audio {
+      display: inline-block;
+      padding: 2px 7px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 2px;
+    }
+    .site-footer__partner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 16px;
+      min-height: 48px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .site-footer__partner:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #fff;
+    }
+    .site-footer__partner--soundtrack .site-footer__reseller {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .site-footer__partner--soundtrack .site-footer__soundtrack-word {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .site-footer__soundtrack-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.95;
+    }
+    .site-footer__partner--sirius {
+      flex-direction: column;
+      padding: 10px 18px;
+      border-radius: 6px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+    .site-footer__partner--sirius:hover {
+      border-color: rgba(255, 255, 255, 0.65);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .site-footer__sirius-main {
+      font-size: 0.9375rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .site-footer__sirius-sub {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .site-footer__rule {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+      border: none;
+    }
+    .site-footer__bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-4) var(--space-7);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .site-footer__copy {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .site-footer__legal {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .site-footer__legal a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--dm-blue);
+      text-decoration: none;
+    }
+    .site-footer__legal a:hover {
+      color: var(--dm-blue-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
   </style>
 </head>
 <body>
-  <!-- HERO (dark) -->
   <header class="hero">
-    <div class="hero__bg"></div>
-    <div class="hero__bg-image" aria-hidden="true"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__waves" aria-hidden="true">
-      <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
-        <path d="M0 100 Q300 40 600 100 T1200 100 V200 H0 Z" fill="url(#heroGrad)" opacity="0.5"/>
-        <path d="M0 120 Q300 80 600 120 T1200 120 V200 H0 Z" fill="url(#heroGrad)" opacity="0.3"/>
-        <path d="M0 140 Q300 110 600 140 T1200 140 V200 H0 Z" fill="url(#heroGrad)" opacity="0.2"/>
-        <defs><linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00aeef"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-      </svg>
-    </div>
-    <div class="container">
-      <div class="hero__content reveal">
-        <h1>You Already Have the Music.<br />Now Let's Make It Sound Incredible.</h1>
-        <p class="subheadline">Upgrade your business music with professional audio curated for your space. Our team will design the perfect speaker layout for your store so your customers hear the experience you intended.</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn--primary">Get My Free Audio Design</a>
-          <a href="tel:5869784214" class="btn btn--secondary">Talk to a Specialist</a>
+    <div class="hero__inner">
+      <a class="hero__logo" href="https://dynamicmediamusic.com/" aria-label="DM Commercial Audio home">
+        <img src="https://dm-audio.dynamicmediamusic.com/images/brand/DM_logo_2016_whiteblue.png" alt="DM Commercial Audio" width="203" height="60" loading="eager" />
+      </a>
+      <h1>You Already Trust Us for Music.<br />Now Get the Audio System Built for It.</h1>
+      <p class="sub">Designed specifically for background music in restaurants—installed nationwide, factory-direct, and fully supported by the same team that powers your music.</p>
+      <ul class="hero-bullets">
+        <li>Factory-direct pricing</li>
+        <li>Free custom audio system design</li>
+        <li>Same day shipping</li>
+        <li>Installed by 8,500+ certified technicians nationwide</li>
+      </ul>
+      <div class="hero-ctas">
+        <div class="hero-cta-wrap">
+          <a class="btn btn--primary" href="#visualizer">See What Your System Would Cost</a>
+          <p class="cta-caption">30-second estimate. No commitment.</p>
         </div>
-        <p class="support-line">Already a Dynamic Media customer? This upgrade is easier than you think.</p>
-      </div>
-      <div class="hero__visual reveal">
-        <div class="hero__sound-rings" aria-hidden="true"><span></span><span></span><span></span></div>
-        <img src="assets/b929e7a3-6dc8-4f0c-bb34-c9488a9dd81d.png" alt="Professional commercial audio" />
+        <a class="btn btn--ghost" href="tel:5869784214">Talk to Your Dedicated Sales Rep</a>
       </div>
     </div>
   </header>
 
-  <!-- SOCIAL PROOF -->
-  <div class="social-proof">
+  <section class="why" aria-labelledby="why-heading">
     <div class="container">
-      <div class="social-proof-card">
-        <span class="social-proof-check" aria-hidden="true"></span>
-        <span class="social-proof-stat">98%</span>
-        <p class="social-proof-desc">of customers say upgrading their speakers improved their store atmosphere</p>
-      </div>
-      <div class="social-proof-card">
-        <span class="social-proof-check" aria-hidden="true"></span>
-        <span class="social-proof-stat">8,500</span>
-        <p class="social-proof-desc">in-network, fully-licensed technicians serving all U.S. zip codes</p>
-      </div>
-      <div class="social-proof-card">
-        <span class="social-proof-check" aria-hidden="true"></span>
-        <span class="social-proof-stat">55,000</span>
-        <p class="social-proof-desc">businesses trust us with their licensed music</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Wave -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 80 L0 40 Q300 0 600 40 T1200 40 L1200 80 Z" fill="var(--light-bg)"/>
-    </svg>
-  </div>
-
-  <!-- SECTION: WHY UPGRADE (light) -->
-  <section id="why-upgrade">
-    <div class="container reveal">
-      <h2 class="section-title">Your Music Is Only As Good As Your Speakers</h2>
-      <p class="section-intro">You've already invested in the right music for your business. If your speakers weren't designed for commercial environments, your customers may not be hearing your music the way it was intended.</p>
-      <p class="section-intro" style="margin-top: -1rem;">Professional commercial audio delivers:</p>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="28" cy="28" r="18"/><path d="M28 10v36M10 28h36"/><ellipse cx="28" cy="28" rx="10" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Consistent Sound Coverage</h3>
-          <p>No loud corners. No quiet spots. Just balanced music across your space.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="22" r="6"/><circle cx="36" cy="22" r="6"/><path d="M14 38c0-4 4-8 14-8s14 4 14 8"/><path d="M28 34v-4"/><path d="M24 38h8"/></svg>
-          </div>
-          <h3>Better Customer Experience</h3>
-          <p>Great sound creates a welcoming atmosphere that keeps customers comfortable and engaged.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h32v24H12z"/><path d="M18 20V14a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6"/><path d="M28 26v8"/><path d="M24 32h8"/></svg>
-          </div>
-          <h3>Equipment Built for Business</h3>
-          <p>Our speakers are designed to perform reliably in busy commercial environments.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M28 12c-4 0-7 3-7 7v2h14v-2c0-4-3-7-7-7z"/><path d="M18 28h-4a4 4 0 0 0-4 4v10h32V32a4 4 0 0 0-4-4h-4"/><path d="M22 36h12"/><circle cx="28" cy="22" r="3"/></svg>
-          </div>
-          <h3>Simple Setup and Expert Support</h3>
-          <p>Our team helps you choose the right system and guides you through installation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Env: Retail -->
-  <div class="env-section env-section--retail" role="img" aria-label="Retail store environment"></div>
-
-  <div class="wave-divider wave-divider--dark">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0 L0 40 Q300 80 600 40 T1200 40 L1200 0 Z" fill="var(--dark-bg)"/>
-    </svg>
-  </div>
-
-  <!-- SECTION: FREE AUDIO DESIGN (dark) -->
-  <section id="free-design">
-    <div class="container reveal">
-      <div class="audio-design__inner">
-        <div class="room-designer-3d" aria-label="Interactive 3D room designer">
-          <iframe
-            src="room-designer.html"
-            title="Interactive 3D room designer for audio layout"
-          ></iframe>
-        </div>
-        <div class="audio-design__copy">
-          <h2 class="section-title">We'll Design Your Audio System for You</h2>
-          <p class="section-intro">Every business space is different. The size of your store, ceiling height, layout, and traffic flow all affect how your music should sound.</p>
-          <p class="section-intro" style="margin-top: -1rem;">That's why our team provides free audio design for your business.</p>
-          <p class="section-intro" style="margin-top: -1rem;">Just tell us about your space and our specialists will recommend the right speaker setup so your music sounds balanced, clear, and welcoming throughout your location.</p>
-          <p class="text-center" style="font-weight: 600; color: rgba(255,255,255,0.95); margin-bottom: 0.5rem;">Your custom audio design includes:</p>
-          <ul class="design-list">
-            <li>Recommended speaker type</li>
-            <li>Ideal speaker placement for your layout</li>
-            <li>Coverage planning so your music sounds even across your space</li>
-            <li>Equipment recommendations tailored to your business</li>
+      <div class="why-grid">
+        <div class="why-copy">
+          <h2 id="why-heading" class="section-head">Built for Dynamic Media Customers</h2>
+          <p class="dm-customer-intro">You already trust us with your music. Now we can design an audio system that works seamlessly for your brand.</p>
+          <ul class="dm-customer-bullets">
+            <li>No guesswork; we understand your current setup</li>
+            <li>One vendor for music, equipment, and support</li>
+            <li>Systems designed specifically for background music</li>
           </ul>
-          <p class="text-center">For you, that means no guesswork and no complicated planning.</p>
-          <div class="design-cta">
-            <a href="tel:5869784214" class="btn btn--primary">Talk to a Specialist</a>
+        </div>
+        <div class="why-media">
+          <img src="assets/ali-aksu-pxHBZEKSQio-unsplash.jpg" alt="Restaurant interior and dining atmosphere" width="1600" height="1200" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visualizer">
+    <div class="viz-grid">
+      <div class="viz-copy">
+        <h2>See What Your System Would Cost in 30 Seconds</h2>
+        <p>No two restaurants sound the same. That's why we don't believe in a one-size-fits-all recommendation.</p>
+        <p>Tell us a few details and get an instant estimate.</p>
+      </div>
+      <div class="viz-tool">
+        <p class="viz-tool-title">Your restaurant details</p>
+        <form id="estimator-form" class="viz-estimator-form" novalidate>
+          <div class="viz-field">
+            <div class="viz-label-row">
+              <label for="viz-room-shape">Room shape</label>
+              <span class="viz-required" aria-hidden="true">*</span>
+              <button type="button" class="viz-info" title="The general layout of your dining area helps us suggest speaker placement and coverage." aria-label="About room shape">i</button>
+            </div>
+            <select id="viz-room-shape" class="viz-select" name="room_shape" required>
+              <option value="" disabled selected>Select your floor plan</option>
+              <option value="open-rectangle">Open rectangle</option>
+              <option value="l-shaped">L-shaped</option>
+              <option value="multi-room">Multi-room / split layout</option>
+              <option value="patio-indoor">Patio + indoor</option>
+              <option value="other">Other / not sure</option>
+            </select>
+          </div>
+          <div class="viz-field">
+            <div class="viz-label-row">
+              <label for="viz-sqft">Total square footage</label>
+              <span class="viz-required" aria-hidden="true">*</span>
+              <button type="button" class="viz-info" title="Approximate total area where guests are seated and you want even background music." aria-label="About square footage">i</button>
+            </div>
+            <div class="viz-input-suffix-wrap">
+              <input id="viz-sqft" class="viz-input" type="number" name="square_footage" inputmode="numeric" min="1" max="999999" step="1" placeholder="e.g. 1200" required aria-describedby="viz-sqft-hint" />
+              <span class="viz-input-suffix">sq ft</span>
+            </div>
+            <span id="viz-sqft-hint" class="visually-hidden">Whole number, square feet</span>
+          </div>
+          <div class="viz-field">
+            <div class="viz-label-row">
+              <label for="viz-ceiling">Ceiling height</label>
+              <span class="viz-required" aria-hidden="true">*</span>
+              <button type="button" class="viz-info" title="Taller ceilings often need more speakers or different mounting for even coverage." aria-label="About ceiling height">i</button>
+            </div>
+            <select id="viz-ceiling" class="viz-select" name="ceiling_height" required>
+              <option value="" disabled selected>Select ceiling height</option>
+              <option value="under-9">Under 9 ft</option>
+              <option value="9-12">9–12 ft</option>
+              <option value="12-16">12–16 ft</option>
+              <option value="over-16">Over 16 ft / vaulted</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+          <div class="viz-field">
+            <div class="viz-label-row">
+              <label for="viz-noise">Ambient noise level</label>
+              <span class="viz-required" aria-hidden="true">*</span>
+              <button type="button" class="viz-info" title="Louder environments need a system with enough headroom to stay clear at your target volume." aria-label="About ambient noise">i</button>
+            </div>
+            <select id="viz-noise" class="viz-select" name="noise_level" required>
+              <option value="" disabled selected>Select noise environment</option>
+              <option value="quiet">Quiet (fine dining)</option>
+              <option value="moderate">Moderate (typical dining)</option>
+              <option value="lively">Lively (bar-forward, open kitchen)</option>
+              <option value="very-loud">Very loud (sports bar, high traffic)</option>
+            </select>
+          </div>
+          <div class="viz-field">
+            <div class="viz-label-row">
+              <label for="viz-speaker">Speaker preference</label>
+              <span class="viz-required" aria-hidden="true">*</span>
+              <button type="button" class="viz-info" title="We can confirm the best option during your free audio design." aria-label="About speaker preference">i</button>
+            </div>
+            <select id="viz-speaker" class="viz-select" name="speaker_preference" required>
+              <option value="" disabled selected>Select speaker type</option>
+              <option value="wall">Wall-mounted</option>
+              <option value="flush">Flush-mount ceiling</option>
+              <option value="mix">Mix / not sure</option>
+              <option value="help">Help me decide</option>
+            </select>
+          </div>
+          <div class="viz-form-actions">
+            <button type="submit" class="btn btn--on-card-primary">Get My Price Estimate</button>
+          </div>
+          <div id="viz-result" class="viz-result" role="region" aria-live="polite" aria-labelledby="viz-result-title">
+            <h3 id="viz-result-title">Your starting recommendation</h3>
+            <p id="viz-result-summary"></p>
+            <p>Share these details when you <a href="https://dynamicmediamusic.com/get-in-contact/">request your full custom audio layout</a>.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="values" aria-label="Value propositions">
+    <div class="container">
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card__icon value-card__icon--round" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8.5V7a2 2 0 0 1 2-2h2.2L14 3l7 7-8 8-8-8v-.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+              <circle cx="7" cy="7" r="1.25" fill="currentColor" />
+              <path d="M10 14l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Factory-Direct Pricing</h3>
+          <p>We manufacture our own equipment, so you get better pricing without any markups.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon value-card__icon--tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.6" />
+              <path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              <path d="M18 2v4h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Free Custom Design</h3>
+          <p>Send us your floor plan and we'll design a system tailored to your space at no cost.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon value-card__icon--round" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 14v4M8 10v8M12 6v12M16 9v9M20 12v6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Built for Background Music</h3>
+          <p>No unnecessary complexity. Just clean, reliable sound designed for restaurants.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon value-card__icon--tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 21s7-4.6 7-11a7 7 0 1 0-14 0c0 6.4 7 11 7 11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+              <circle cx="12" cy="10" r="2.25" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </div>
+          <h3>Nationwide Installation</h3>
+          <p>Installed in every U.S. zip code by 8,500+ certified technicians.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="framing" aria-labelledby="framing-heading" id="framing-section">
+    <div class="container framing-layout">
+      <div class="framing-head">
+        <h2 id="framing-heading" class="section-head">Now Is the Right Time to Switch.</h2>
+        <p class="framing-close">Don't install a temporary fix. Get a system designed to last.</p>
+        <p id="framing-live" class="framing-carousel__status" aria-live="polite">Renovating your space</p>
+      </div>
+      <div class="framing-carousel-col">
+        <div class="framing-carousel-wrap">
+          <div class="framing-carousel" aria-hidden="true">
+            <ul class="framing-carousel__track" id="framing-track">
+              <li>Renovating your space</li>
+              <li>Opening a new location</li>
+              <li>Replacing broken or aging equipment</li>
+              <li>Expanding your dining area</li>
+              <li class="is-clone" aria-hidden="true">Renovating your space</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="wave-divider">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 80 L0 40 Q300 0 600 40 T1200 40 L1200 80 Z" fill="var(--light-bg)"/>
-    </svg>
-  </div>
+  <section class="products-section" id="products" aria-labelledby="products-heading">
+    <div class="container">
+      <h2 id="products-heading" class="section-head">The Right Speaker for Your Restaurant</h2>
+      <p class="section-sub">Not sure which option fits your space? Our specialists will walk you through it as part of your free audio design. Here's a look at what we offer:</p>
 
-  <!-- Env: Restaurant -->
-  <div class="env-section env-section--restaurant" role="img" aria-label="Restaurant environment"></div>
-
-  <!-- SECTION: PRODUCTS (light) -->
-  <section id="products">
-    <div class="container reveal">
-      <h2 class="section-title">Simple Solutions for a Powerful Upgrade</h2>
-      <p class="section-intro">Not sure which speaker is right for your space? Our specialists will recommend the best option as part of your free audio design.</p>
-      <div class="products">
-        <div class="product-card">
-          <div class="product-card__image-wrap">
-            <div class="product-card__image">
-              <img src="assets/d49aba22-f5d0-4334-b70c-702178617aba.png" alt="Wall-Mounted Speaker" />
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-card__main">
+            <div class="product-card__top">
+              <div class="product-card__img">
+                <img src="assets/DM-SM432-white-2.webp" alt="Wall-mounted speaker" width="200" height="250" loading="lazy" />
+              </div>
+              <div class="product-card__header">
+                <h3 class="product-card__title">Wall-Mounted Speaker</h3>
+                <p class="product-ideal-for">Ideal for</p>
+                <div class="tags">
+                  <span class="tag">Patios</span>
+                  <span class="tag">Bar areas</span>
+                  <span class="tag">Open dining rooms</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>Wall-Mounted Speaker</h3>
-            <p class="desc">Our wall-mounted speakers are ideal for businesses looking for a quick upgrade with minimal installation. They deliver balanced sound where your space needs coverage, making them a great solution when ceiling installation isn't practical.</p>
-            <div class="key-benefits">
-              <strong>Key Benefits</strong>
-              <ul>
-                <li>Adjustable mounting bracket for easy positioning</li>
-                <li>Durable weather-resistant construction</li>
-                <li>Clear, full-range sound</li>
-                <li>Great for indoor or outdoor environments</li>
+            <div class="product-card__body">
+              <hr class="product-rule" />
+              <p class="product-kicker">Key benefits</p>
+              <ul class="product-benefits">
+                <li>Adjustable mounting bracket for precise positioning</li>
+                <li>Weather-resistant and reliable in outdoor spaces</li>
+                <li>Clear, balanced audio at conversational volume levels</li>
+                <li>Fast installation with minimal disruption to your service</li>
               </ul>
             </div>
-            <div class="product-ctas">
-              <button type="button" class="btn btn--primary interest-cta" data-product="Wall-Mounted Speaker">I'm interested</button>
-            </div>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-card__image-wrap">
-            <div class="product-card__image">
-              <img src="assets/1e49597a-28e1-4e7e-bfe7-eaa05174274a.png" alt="Flush-Mount Ceiling Speaker" />
+          <footer class="product-footer">
+            <a class="btn" href="tel:5869784214">Talk to My Sales Rep</a>
+            <p class="schedule-link"><a href="https://dynamicmediamusic.com/get-in-contact/">Don't want to wait? Schedule your meeting now</a></p>
+          </footer>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__main">
+            <div class="product-card__top">
+              <div class="product-card__img">
+                <img src="assets/DM-FM820-0-shadow.webp" alt="Flush-mount ceiling speaker" width="200" height="250" loading="lazy" />
+              </div>
+              <div class="product-card__header">
+                <h3 class="product-card__title">Flush-Mount Ceiling Speaker</h3>
+                <p class="product-ideal-for">Ideal for</p>
+                <div class="tags">
+                  <span class="tag">Full-service dining rooms</span>
+                  <span class="tag">Fine dining</span>
+                  <span class="tag">Hospitality spaces</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>Flush-Mount Ceiling Speaker</h3>
-            <p class="desc">Flush-mount ceiling speakers blend seamlessly into your ceiling, delivering powerful, evenly distributed audio while keeping your space clean and professional. They're the ideal choice for businesses that want high-quality sound without visible equipment.</p>
-            <div class="key-benefits">
-              <strong>Key Benefits</strong>
-              <ul>
-                <li>Discreet ceiling installation</li>
-                <li>Wide sound coverage</li>
-                <li>Commercial-grade durability</li>
-                <li>Designed for professional audio systems</li>
+            <div class="product-card__body">
+              <hr class="product-rule" />
+              <p class="product-kicker">Key benefits</p>
+              <ul class="product-benefits">
+                <li>Discreet, professional installation</li>
+                <li>Wide sound distribution across large dining areas</li>
+                <li>Durability built for the noise and heat of restaurants</li>
+                <li>Designed for consistent coverage that completes a dining room</li>
               </ul>
             </div>
-            <div class="product-ctas">
-              <button type="button" class="btn btn--primary interest-cta" data-product="Flush-Mount Ceiling Speaker">I'm interested</button>
+          </div>
+          <footer class="product-footer">
+            <a class="btn" href="tel:5869784214">Talk to My Sales Rep</a>
+            <p class="schedule-link"><a href="https://dynamicmediamusic.com/get-in-contact/">Don't want to wait? Schedule your meeting now</a></p>
+          </footer>
+        </article>
+
+        <article class="product-card product-card--full">
+          <div class="product-card__main">
+            <div class="product-card__top">
+              <div class="product-card__img">
+                <img src="assets/mixer-amplifier-180w-front.png" alt="180W commercial mixer amplifier, front view" width="200" height="250" loading="lazy" />
+              </div>
+              <div class="product-card__header">
+                <h3 class="product-card__title">Commercial Amplifier</h3>
+                <p class="product-ideal-for">Highlights</p>
+                <div class="tags">
+                  <span class="tag">Powers your entire system</span>
+                  <span class="tag">Built for restaurant use</span>
+                  <span class="tag">Included in your design</span>
+                </div>
+              </div>
             </div>
+            <div class="product-card__body">
+              <p class="product-desc">Delivers clean, consistent power to every speaker in your layout—voiced for restaurant background music, not a concert rig. We size amplification to your square footage, speaker count, and how hard you run volume day to day.</p>
+              <hr class="product-rule" />
+              <p class="product-kicker">Key benefits</p>
+              <ul class="product-benefits">
+                <li>Stable power for consistent volume across your dining room and bar</li>
+                <li>Engineered for long operating hours in commercial environments</li>
+                <li>Included in every recommended install we prepare for your space</li>
+              </ul>
+            </div>
+          </div>
+          <footer class="product-footer">
+            <a class="btn" href="tel:5869784214">Talk to My Sales Rep</a>
+            <p class="schedule-link"><a href="https://dynamicmediamusic.com/get-in-contact/">Don't want to wait? Schedule your meeting now</a></p>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" aria-labelledby="process-heading">
+    <div class="container">
+      <h2 id="process-heading">Upgrading Your Audio Is Easier Than You Think</h2>
+      <div class="process-grid">
+        <div class="process-col">
+          <div class="process-num" aria-hidden="true">1</div>
+          <h3>Tell Us About Your Space</h3>
+          <p>Share a few details (or use the estimator)</p>
+        </div>
+        <div class="process-col">
+          <div class="process-num" aria-hidden="true">2</div>
+          <h3>Get a Free Audio Design</h3>
+          <p>We create a custom layout and recommendation</p>
+        </div>
+        <div class="process-col">
+          <div class="process-num" aria-hidden="true">3</div>
+          <h3>Install Nationwide</h3>
+          <p>Our technicians handle everything, no coordination needed</p>
+        </div>
+      </div>
+      <div class="process-callout">
+        <p class="process-callout__headline">
+          <span class="process-callout__lead">Our technicians serve</span><span class="process-callout__accent"> every U.S. zip code.</span>
+        </p>
+        <span class="process-callout__rule" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="one-team" id="one-team-section" aria-labelledby="team-heading">
+    <div class="container one-team-layout">
+      <div class="one-team-head">
+        <h2 id="team-heading" class="section-head">Designed, Installed, and Supported by One Team</h2>
+        <p id="one-team-live" class="one-team-carousel__status" aria-live="polite">No coordinating between vendors</p>
+      </div>
+      <div class="one-team-carousel-col">
+        <div class="one-team-carousel-wrap">
+          <div class="one-team-carousel" aria-hidden="true">
+            <ul class="one-team-carousel__track" id="one-team-track">
+              <li>No coordinating between vendors</li>
+              <li>No compatibility issues</li>
+              <li>One point of contact for everything</li>
+              <li class="is-clone" aria-hidden="true">No coordinating between vendors</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interest form modal -->
-  <div class="interest-modal-overlay" id="interest-modal" aria-hidden="true">
-    <div class="interest-modal" role="dialog" aria-labelledby="interest-modal-title">
-      <h3 id="interest-modal-title">I'm interested</h3>
-      <form id="interest-form" action="https://dynamicmediamusic.com/get-in-contact/" method="post" target="_blank">
-        <input type="hidden" name="product" id="interest-product" value="" />
-        <div class="form-row">
-          <label for="interest-name">Name</label>
-          <input type="text" id="interest-name" name="name" required placeholder="Your name" />
-        </div>
-        <div class="form-row">
-          <label for="interest-phone">Phone number</label>
-          <input type="tel" id="interest-phone" name="phone" required placeholder="Phone number" />
-        </div>
-        <div class="form-row">
-          <label for="interest-title">Title at company</label>
-          <input type="text" id="interest-title" name="title" required placeholder="Your title" />
-        </div>
-        <div class="checkbox-row">
-          <input type="checkbox" id="interest-buyer" name="are_you_buyer" value="yes" />
-          <label for="interest-buyer">Are you the buyer?</label>
-        </div>
-        <div class="modal-actions">
-          <button type="button" class="btn btn--secondary-modal" id="interest-modal-cancel">Cancel</button>
-          <button type="submit" class="btn btn--primary">Submit</button>
-        </div>
-      </form>
+  <section class="testimonial" aria-labelledby="testimonial-heading">
+    <div class="container testimonial__wrap">
+      <h2 id="testimonial-heading" class="visually-hidden">Customer testimonial</h2>
+      <figure class="testimonial-card">
+        <span class="testimonial-card__mark" aria-hidden="true">&ldquo;</span>
+        <p class="testimonial-card__kicker">Dynamic Media sets the gold standard in service.</p>
+        <blockquote class="testimonial-card__quote" cite="https://dynamicmediamusic.com/">
+          <p>Your team has displayed the kind of customer service any employer would be proud to have represented for them. I feel they went beyond the normal corporate protocols to ensure my complete satisfaction. Any future needs I may have could only be fulfilled by the crack team of experts at Dynamic Media. As a new restauranteur, I give them my highest recommendation.</p>
+        </blockquote>
+        <figcaption class="testimonial-card__cite">
+          <span class="testimonial-card__name">Kevin</span>
+          <span class="testimonial-card__role">Daughtry House Restaurant</span>
+        </figcaption>
+        <span class="testimonial-card__watermark" aria-hidden="true"></span>
+      </figure>
     </div>
-  </div>
+  </section>
 
-  <!-- Env: Fitness -->
-  <div class="env-section env-section--fitness" role="img" aria-label="Fitness studio environment"></div>
-
-  <!-- SECTION: PROCESS (light) - Timeline -->
-  <section id="process">
-    <div class="container reveal">
-      <h2 class="section-title">How Our Audio Design Process Works</h2>
-      <p class="section-intro">Upgrading your audio is simpler than most business owners expect.</p>
-      <div class="timeline">
-        <div class="timeline__step">
-          <span class="timeline__num">1</span>
-          <strong>Tell Us About Your Space</strong>
-          <p>Share a few details about your business and layout.</p>
-        </div>
-        <div class="timeline__connector" aria-hidden="true"></div>
-        <div class="timeline__step">
-          <span class="timeline__num">2</span>
-          <strong>We Design Your Audio Setup</strong>
-          <p>Our specialists recommend the right speakers and placement.</p>
-        </div>
-        <div class="timeline__connector" aria-hidden="true"></div>
-        <div class="timeline__step">
-          <span class="timeline__num">3</span>
-          <strong>Install Your System</strong>
-          <p>Our team can guide you or connect you with installation options.</p>
-        </div>
-        <div class="timeline__connector" aria-hidden="true"></div>
-        <div class="timeline__step">
-          <span class="timeline__num">4</span>
-          <strong>Enjoy Better Sound</strong>
-          <p>Your music now fills your space the way it should.</p>
+  <section class="final" id="contact">
+    <div class="container">
+      <h2>The Easiest Upgrade Your Restaurant Will Ever Make</h2>
+      <div class="final-ctas">
+        <div class="final-cta-row">
+          <a class="btn btn--primary" href="#visualizer">See What Your System Would Cost</a>
+          <a class="btn btn--ghost-final" href="tel:5869784214">Talk to Your Dedicated Rep</a>
         </div>
       </div>
-      <p class="process-callout">Our technicians serve every U.S. zip code, so your systems are installed quickly with minimal business disruption.</p>
     </div>
   </section>
 
-  <!-- Wave: white section wavy bottom -->
-  <div class="wave-divider wave-divider--wavy-bottom" aria-hidden="true">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0 L1200 0 L1200 80 Q600 0 0 80 Z" fill="var(--light-bg)"/>
-    </svg>
-  </div>
-
-  <!-- FINAL CTA (dark) -->
-  <section class="final-cta" id="contact">
-    <div class="final-cta__bg" aria-hidden="true"></div>
-    <div class="final-cta__overlay"></div>
-    <div class="container reveal">
-      <h2 class="section-title">Ready to Upgrade Your Audio?</h2>
-      <p class="section-intro">You already trust Dynamic Media for your business music.</p>
-      <p class="section-intro" style="margin-top: -1rem;">We'll make it sound even better.</p>
-      <a href="https://dynamicmediamusic.com/get-in-contact/" class="btn btn--primary">Get My Free Audio Design</a>
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__logos">
+      <a class="site-footer__logo" href="https://dynamicmediamusic.com/" aria-label="Dynamic Media">
+        <img src="assets/DM_logo_2016_whiteblue.png" alt="" width="200" height="56" decoding="async" />
+      </a>
+      <a class="site-footer__commercial-link" href="https://dm-audio.dynamicmediamusic.com/" aria-label="DM Commercial Audio">
+        <span class="site-footer__commercial-lockup">
+          <span class="site-footer__commercial-dm">DM</span>
+          <span class="site-footer__commercial-meta">
+            <span class="site-footer__commercial-sub">Commercial</span>
+            <span class="site-footer__commercial-audio">AUDIO</span>
+          </span>
+        </span>
+      </a>
+      <a class="site-footer__partner site-footer__partner--soundtrack" href="https://www.soundtrackyourbrand.com/" rel="noopener noreferrer" target="_blank">
+        <span class="site-footer__reseller">Reseller of</span>
+        <span class="site-footer__soundtrack-word">
+          <svg class="site-footer__soundtrack-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.35" />
+            <path d="M12 6v12M8 9v6M16 9v6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+          </svg>
+          Soundtrack
+        </span>
+      </a>
+      <a class="site-footer__partner site-footer__partner--sirius" href="https://www.siriusxm.com/business" rel="noopener noreferrer" target="_blank">
+        <span class="site-footer__sirius-main">SiriusXM</span>
+        <span class="site-footer__sirius-sub">FOR BUSINESS</span>
+      </a>
     </div>
-  </section>
-
-  <!-- Sticky CTA -->
-  <div class="sticky-cta">
-    <a href="tel:5869784214">
-      <span class="sticky-cta__desktop">Talk to a Specialist</span>
-      <span class="sticky-cta__mobile">Call Now</span>
-    </a>
-  </div>
+    <hr class="site-footer__rule" />
+    <div class="site-footer__bar">
+      <p class="site-footer__copy">© 2026 Dynamic Media</p>
+      <nav class="site-footer__legal" aria-label="Legal">
+        <a href="https://dynamicmediamusic.com/privacy-policy/">Privacy Policy</a>
+        <a href="https://dynamicmediamusic.com/terms-and-conditions/">Terms and Conditions</a>
+      </nav>
+    </div>
+  </footer>
 
   <script>
-    (function() {
-      var reveals = document.querySelectorAll('.reveal');
-      var timelineSteps = document.querySelectorAll('.timeline__step');
-      function runReveal() {
-        var windowHeight = window.innerHeight;
-        var trigger = windowHeight - 100;
-        reveals.forEach(function(el) {
-          var top = el.getBoundingClientRect().top;
-          if (top < trigger) el.classList.add('visible');
-        });
-        timelineSteps.forEach(function(el, i) {
-          var top = el.getBoundingClientRect().top;
-          if (top < trigger) {
-            setTimeout(function() { el.classList.add('visible'); }, 120 * i);
-          }
-        });
-      }
-      window.addEventListener('scroll', runReveal);
-      window.addEventListener('resize', runReveal);
-      runReveal();
+    (function () {
+      var estimatorForm = document.getElementById('estimator-form');
+      if (!estimatorForm) return;
+      var resultEl = document.getElementById('viz-result');
+      var summaryEl = document.getElementById('viz-result-summary');
+      estimatorForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!estimatorForm.checkValidity()) {
+          estimatorForm.reportValidity();
+          return;
+        }
+        var room = document.getElementById('viz-room-shape').selectedOptions[0].text;
+        var sqft = document.getElementById('viz-sqft').value;
+        var ceiling = document.getElementById('viz-ceiling').selectedOptions[0].text;
+        var noise = document.getElementById('viz-noise').selectedOptions[0].text;
+        var speakerEl = document.getElementById('viz-speaker');
+        var speakerVal = speakerEl.value;
+        var speakerPhrase;
+        if (speakerVal === 'wall') speakerPhrase = 'wall-mounted speakers';
+        else if (speakerVal === 'flush') speakerPhrase = 'flush-mount ceiling speakers';
+        else if (speakerVal === 'mix') speakerPhrase = 'a mix of speaker types (finalized with our team)';
+        else speakerPhrase = 'speaker type we will recommend for you';
+        var n = parseInt(sqft, 10);
+        var sqftStr = isNaN(n) ? sqft : n.toLocaleString();
+        var summary =
+          'Based on about ' +
+          sqftStr +
+          ' sq ft, a floor plan described as "' +
+          room +
+          '," ' +
+          ceiling +
+          ' ceilings, ' +
+          noise.toLowerCase() +
+          ' ambient noise, and ' +
+          speakerPhrase +
+          ', we will use this profile as the starting point for your estimate and recommended setup. Speaker count, amplifier sizing, and mounting details are finalized in your free custom audio design.';
+        summaryEl.textContent = summary;
+        resultEl.classList.add('is-visible');
+        resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
     })();
+    (function () {
+      var section = document.getElementById('framing-section');
+      var track = document.getElementById('framing-track');
+      var live = document.getElementById('framing-live');
+      if (!section || !track || !live) return;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        section.classList.add('framing--static');
+        var fcStatic = section.querySelector('.framing-carousel');
+        if (fcStatic) fcStatic.removeAttribute('aria-hidden');
+        if (live) live.setAttribute('aria-hidden', 'true');
+        return;
+      }
+      var REAL_COUNT = 4;
+      var current = 0;
+      var intervalMs = 3200;
+      var timer = null;
 
-    (function() {
-      var modal = document.getElementById('interest-modal');
-      var form = document.getElementById('interest-form');
-      var productInput = document.getElementById('interest-product');
-      var cancelBtn = document.getElementById('interest-modal-cancel');
-
-      var modalTitle = document.getElementById('interest-modal-title');
-      document.querySelectorAll('.interest-cta').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var product = this.getAttribute('data-product') || '';
-          productInput.value = product;
-          modalTitle.textContent = product
-            ? "I'm interested in the " + product.toLowerCase()
-            : "I'm interested";
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      function closeModal() {
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+      function setLiveText(index) {
+        var i = index >= REAL_COUNT ? 0 : index;
+        var li = track.children[i];
+        if (li) live.textContent = li.textContent;
       }
 
-      cancelBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModal();
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      function applySlide(index, instant) {
+        if (instant) {
+          track.style.transition = 'none';
+        }
+        track.style.setProperty('--framing-slide', String(index));
+        if (instant) {
+          void track.offsetHeight;
+          track.style.transition = '';
+        }
+        setLiveText(index);
+      }
+
+      function onTransitionEnd(e) {
+        if (e.propertyName !== 'transform') return;
+        if (current === REAL_COUNT) {
+          current = 0;
+          applySlide(0, true);
+        }
+      }
+
+      track.addEventListener('transitionend', function (e) {
+        if (e.target !== track) return;
+        onTransitionEnd(e);
       });
 
-      form.addEventListener('submit', function() {
-        closeModal();
+      function advance() {
+        if (current < REAL_COUNT - 1) {
+          current++;
+          applySlide(current, false);
+        } else if (current === REAL_COUNT - 1) {
+          current = REAL_COUNT;
+          applySlide(current, false);
+        }
+      }
+
+      function start() {
+        if (timer) return;
+        timer = window.setInterval(advance, intervalMs);
+      }
+
+      function stop() {
+        if (timer) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) start();
+            else stop();
+          });
+        },
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
+      );
+      io.observe(section);
+      setLiveText(0);
+    })();
+    (function () {
+      var section = document.getElementById('one-team-section');
+      var track = document.getElementById('one-team-track');
+      var live = document.getElementById('one-team-live');
+      if (!section || !track || !live) return;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        section.classList.add('one-team--static');
+        var oc = section.querySelector('.one-team-carousel');
+        if (oc) oc.removeAttribute('aria-hidden');
+        if (live) live.setAttribute('aria-hidden', 'true');
+        return;
+      }
+      var REAL_COUNT = 3;
+      var current = 0;
+      var intervalMs = 3200;
+      var timer = null;
+
+      function setLiveText(index) {
+        var i = index >= REAL_COUNT ? 0 : index;
+        var li = track.children[i];
+        if (li) live.textContent = li.textContent;
+      }
+
+      function applySlide(index, instant) {
+        if (instant) track.style.transition = 'none';
+        track.style.setProperty('--one-team-slide', String(index));
+        if (instant) {
+          void track.offsetHeight;
+          track.style.transition = '';
+        }
+        setLiveText(index);
+      }
+
+      function onTransitionEnd(e) {
+        if (e.propertyName !== 'transform') return;
+        if (current === REAL_COUNT) {
+          current = 0;
+          applySlide(0, true);
+        }
+      }
+
+      track.addEventListener('transitionend', function (e) {
+        if (e.target !== track) return;
+        onTransitionEnd(e);
       });
+
+      function advance() {
+        if (current < REAL_COUNT - 1) {
+          current++;
+          applySlide(current, false);
+        } else if (current === REAL_COUNT - 1) {
+          current = REAL_COUNT;
+          applySlide(current, false);
+        }
+      }
+
+      function start() {
+        if (timer) return;
+        timer = window.setInterval(advance, intervalMs);
+      }
+
+      function stop() {
+        if (timer) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) start();
+            else stop();
+          });
+        },
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
+      );
+      io.observe(section);
+      setLiveText(0);
     })();
   </script>
 </body>

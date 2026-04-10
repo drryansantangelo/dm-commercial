@@ -11,3 +11,6 @@ room-designer-3d/
 # Local env
 .env
 .env.local
+
+# Firebase local cache
+.firebase/
