@@ -270,146 +270,174 @@
       object-fit: cover;
     }
 
-    /* Visualizer */
-    #visualizer {
+    /* Package pricing — primary above the fold */
+    .packages-section {
       border-bottom: 1px solid var(--lc-border);
       background: var(--lc-bg-soft);
       padding: var(--space-9) var(--space-4);
     }
-    @media (min-width: 768px) { #visualizer { padding-left: 32px; padding-right: 32px; } }
-    .viz-grid {
-      display: grid;
-      gap: var(--space-8);
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    @media (min-width: 1024px) {
-      .viz-grid { grid-template-columns: minmax(0, 45fr) minmax(0, 55fr); gap: 80px; }
-    }
-    .viz-copy h2 {
-      margin: 0 0 var(--space-4);
-      max-width: 520px;
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.015em;
-      color: var(--lc-text-primary);
-    }
-    .viz-copy > p {
-      margin: 0;
-      max-width: 520px;
-      font-size: 1rem;
-      line-height: 1.7;
+    @media (min-width: 768px) { .packages-section { padding-left: 32px; padding-right: 32px; } }
+    .packages-section .section-head { text-align: center; max-width: 52rem; margin-left: auto; margin-right: auto; }
+    .packages-section .packages-lead {
+      margin: var(--space-4) auto 0;
+      max-width: 40rem;
+      text-align: center;
+      font-size: 1.0625rem;
+      line-height: 1.65;
       color: var(--lc-text-body);
     }
-    .viz-copy > p + p { margin-top: 1rem; }
-    .viz-tool {
-      border-radius: var(--radius);
-      border: 1px solid var(--lc-border);
-      background: var(--lc-bg-white);
-      padding: var(--space-6);
-      box-shadow: 0 16px 48px rgba(26, 43, 60, 0.08);
+    .packages-grid {
+      display: grid;
+      gap: var(--space-6);
+      max-width: 1120px;
+      margin: var(--space-8) auto 0;
     }
-    .viz-tool-title {
-      margin: 0 0 var(--space-5);
+    @media (min-width: 900px) {
+      .packages-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); align-items: stretch; }
+    }
+    .package-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--lc-bg-white);
+      border: 1px solid rgba(0, 174, 239, 0.35);
+      border-radius: 12px;
+      padding: var(--space-6);
+      box-shadow: 0 8px 32px rgba(26, 43, 60, 0.06);
+    }
+    .package-card--popular {
+      position: relative;
+      z-index: 0;
+      border-color: rgba(0, 174, 239, 0.5);
+      box-shadow: 0 10px 40px rgba(0, 174, 239, 0.12), 0 8px 32px rgba(26, 43, 60, 0.06);
+    }
+    /* Badge out of flow so tier titles align across columns; sits above top edge */
+    .package-card--popular .package-card__badge-wrap {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -58%);
+      margin: 0;
+      width: max-content;
+      max-width: calc(100% - 24px);
+      text-align: center;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .package-card--popular .package-card__badge {
+      pointer-events: auto;
+    }
+    .package-card__badge {
+      display: inline-block;
+      padding: 5px 14px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--dm-blue);
+      border-radius: 999px;
+      box-shadow: 0 2px 10px rgba(0, 174, 239, 0.35);
+    }
+    .package-card__title {
+      margin: 0 0 8px;
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--lc-text-primary);
+    }
+    .package-card__desc {
+      margin: 0 0 10px;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--lc-text-body);
+    }
+    .package-card__fit {
+      margin: 0 0 var(--space-4);
       font-size: 0.8125rem;
       font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--lc-text-muted);
+      line-height: 1.45;
+      color: var(--dm-blue);
     }
-    .viz-field { margin-bottom: var(--space-5); }
-    .viz-field:last-of-type { margin-bottom: 0; }
-    .viz-label-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px 8px;
-      margin-bottom: 8px;
-    }
-    .viz-label-row label {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--lc-text-primary);
-    }
-    .viz-required { color: #c62828; font-weight: 700; }
-    .viz-info {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.125rem;
-      height: 1.125rem;
+    .package-card__list {
+      margin: 0 0 var(--space-5);
       padding: 0;
-      border: 1px solid var(--lc-border);
-      border-radius: 50%;
-      background: var(--lc-bg-soft);
-      font-size: 0.65rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--lc-text-muted);
-      cursor: help;
-      line-height: 1;
-    }
-    .viz-select,
-    .viz-input {
-      width: 100%;
-      padding: 11px 12px;
-      font-family: inherit;
+      list-style: none;
+      flex: 1;
       font-size: 0.9375rem;
-      color: var(--lc-text-primary);
-      background: var(--lc-bg-white);
-      border: 1px solid var(--lc-border);
-      border-radius: var(--radius);
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-    .viz-select:focus,
-    .viz-input:focus {
-      outline: none;
-      border-color: var(--dm-blue);
-      box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.2);
-    }
-    .viz-select:invalid { color: var(--lc-text-muted); }
-    .viz-input-suffix-wrap {
-      display: flex;
-      align-items: stretch;
-      border: 1px solid var(--lc-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: box-shadow 0.15s ease;
-    }
-    .viz-input-suffix-wrap:focus-within {
-      border-color: var(--dm-blue);
-      box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.2);
-    }
-    .viz-input-suffix-wrap .viz-input {
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-    }
-    .viz-input-suffix-wrap .viz-input:focus { box-shadow: none; }
-    .viz-input-suffix {
-      display: flex;
-      align-items: center;
-      padding: 0 14px;
-      font-size: 0.875rem;
-      font-weight: 500;
+      line-height: 1.55;
       color: var(--lc-text-body);
-      background: var(--lc-bg-soft);
-      border-left: 1px solid var(--lc-border);
-      white-space: nowrap;
     }
-    .viz-form-actions {
+    .package-card__list li {
+      position: relative;
+      padding-left: 1.35rem;
+      margin-bottom: 10px;
+    }
+    .package-card__list li:last-child { margin-bottom: 0; }
+    .package-card__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--dm-blue);
+      opacity: 0.85;
+    }
+    .package-card__pricing {
+      margin: 0 0 var(--space-5);
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(0, 174, 239, 0.15);
+    }
+    .package-card__price-prefix {
+      margin: 0 0 8px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.01em;
+      color: var(--lc-text-muted);
+    }
+    .package-card__price-main {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      padding-top: var(--space-5);
-      margin-top: var(--space-5);
-      border-top: 1px solid var(--lc-border);
+      align-items: baseline;
+      gap: 0.35rem 0.65rem;
+      margin: 0 0 12px;
     }
-    .viz-form-actions .btn {
-      min-width: 200px;
+    .package-card__amount {
+      font-size: clamp(1.85rem, 4.5vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      color: var(--dm-blue);
+    }
+    .package-card__installed {
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--lc-text-muted);
+    }
+    .package-card__value-note {
+      margin: 0;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--lc-text-body);
+    }
+    .package-card .btn {
+      width: 100%;
+      max-width: none;
+      margin-top: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .packages-note {
+      margin: var(--space-8) auto 0;
+      max-width: 36rem;
+      text-align: center;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--lc-text-muted);
     }
     .btn--on-card-primary {
       background: var(--dm-blue);
@@ -421,23 +449,6 @@
       border-color: var(--dm-blue-hover);
       color: #fff;
     }
-    .viz-result {
-      display: none;
-      margin-top: var(--space-5);
-      padding: var(--space-5);
-      border-radius: var(--radius);
-      background: var(--lc-bg-soft);
-      border: 1px solid var(--lc-border);
-    }
-    .viz-result.is-visible { display: block; }
-    .viz-result h3 {
-      margin: 0 0 10px;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--lc-text-primary);
-    }
-    .viz-result p { margin: 0; font-size: 0.9375rem; line-height: 1.65; color: var(--lc-text-body); }
-    .viz-result p + p { margin-top: 10px; }
 
     /* Value props — same dark band as .process (no card panels) */
     .values {
@@ -521,7 +532,7 @@
         grid-column: 1;
         grid-row: 1;
       }
-      .framing-carousel-col {
+      .framing-points-col {
         grid-column: 2;
         grid-row: 1;
       }
@@ -540,94 +551,82 @@
       margin-bottom: 0;
       max-width: none;
     }
-    .framing-carousel-col {
+    .framing-points-col {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       width: 100%;
       min-width: 0;
     }
-    .framing-carousel-wrap {
-      width: 100%;
-      max-width: 28rem;
-      margin: 0;
-      overflow: hidden;
-      --framing-slide-h: clamp(5.5rem, 14vw, 8rem);
-    }
-    @media (min-width: 900px) {
-      .framing-carousel-wrap { max-width: min(100%, 34rem); }
-    }
-    .framing-carousel {
-      height: var(--framing-slide-h);
-      overflow: hidden;
-    }
-    .framing-carousel__track {
+    .framing-points {
       margin: 0;
       padding: 0;
       list-style: none;
-      transform: translateY(calc(var(--framing-slide, 0) * var(--framing-slide-h) * -1));
-      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform;
+      width: 100%;
+      max-width: 34rem;
     }
-    .framing-carousel__track li {
+    .framing-points li {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55em;
-      height: var(--framing-slide-h);
+      align-items: flex-start;
+      gap: 0.65em;
       margin: 0;
-      padding: 0 0.5rem;
+      padding: 0.65rem 0;
       box-sizing: border-box;
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-size: clamp(1.2rem, 2.4vw, 1.85rem);
       font-weight: 700;
-      line-height: 1.25;
+      line-height: 1.3;
       letter-spacing: -0.015em;
-      text-align: center;
+      text-align: left;
       color: var(--lc-text-primary);
     }
-    .framing-carousel__track li::before {
+    .framing-points__text {
+      flex: 1;
+      min-width: 0;
+      margin-inline-start: 0;
+      transition: margin-inline-start 0.7s cubic-bezier(0.22, 1, 0.32, 1);
+    }
+    .framing-points.framing-points--enhanced li {
+      opacity: 0;
+      transform: translate3d(-12px, 1.25rem, 0);
+      transition:
+        opacity 0.7s cubic-bezier(0.22, 1, 0.32, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.32, 1);
+    }
+    .framing-points.framing-points--enhanced li.framing-point--inview {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .framing-points.framing-points--enhanced li.framing-point--inview:nth-child(1) .framing-points__text { margin-inline-start: 0; }
+    .framing-points.framing-points--enhanced li.framing-point--inview:nth-child(2) .framing-points__text { margin-inline-start: 0.5rem; }
+    .framing-points.framing-points--enhanced li.framing-point--inview:nth-child(3) .framing-points__text { margin-inline-start: 1rem; }
+    .framing-points.framing-points--enhanced li.framing-point--inview:nth-child(4) .framing-points__text { margin-inline-start: 1.5rem; }
+    .framing-points li:first-child { padding-top: 0; }
+    .framing-points li:last-child { padding-bottom: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .framing-points.framing-points--enhanced li {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .framing-points__text {
+        transition: none;
+      }
+      .framing-points.framing-points--enhanced li.framing-point--inview .framing-points__text {
+        margin-inline-start: 0 !important;
+      }
+    }
+    .framing-points li::before {
       content: "";
-      flex-shrink: 0;
-      width: 0.55em;
-      height: 0.28em;
-      margin-top: 0.08em;
+      flex: 0 0 0.85em;
+      width: 0.85em;
+      height: 0.26em;
+      margin-top: 0.38em;
+      box-sizing: border-box;
       border: solid var(--dm-blue);
-      border-width: 0 0 0.11em 0.11em;
+      border-width: 0 0 0.1em 0.1em;
       border-radius: 0 0 0 1px;
       transform: rotate(-48deg);
       background: none;
-    }
-    .framing-carousel__status {
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      height: 1px;
-      width: 1px;
-      margin: -1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap;
-    }
-    .framing--static .framing-carousel-wrap {
-      height: auto;
-      overflow: visible;
-    }
-    .framing--static .framing-carousel {
-      height: auto;
-      overflow: visible;
-    }
-    .framing--static .framing-carousel__track {
-      transform: none !important;
-      transition: none !important;
-    }
-    .framing--static .framing-carousel__track li {
-      height: auto;
-      min-height: 0;
-      padding: 0.35rem 0.5rem;
-      margin-bottom: 0.75rem;
-      justify-content: center;
-    }
-    .framing--static .framing-carousel__track li.is-clone {
-      display: none;
     }
     .framing-close {
       text-align: left;
@@ -636,10 +635,6 @@
       font-weight: 600;
       color: var(--lc-text-primary);
     }
-    @media (prefers-reduced-motion: reduce) {
-      .framing-carousel__track { transition: none; }
-    }
-
     /* Products */
     .products-section { padding: var(--space-9) var(--space-4); background: var(--lc-bg-soft); }
     .products-grid {
@@ -859,10 +854,10 @@
       opacity: 0.95;
     }
 
-    /* One team — H2 left, swipe carousel right (matches framing treatment) */
+    /* One team — H2 left, checklist right (scroll waterfall + aligned checks, like framing) */
     .one-team {
       padding: var(--space-9) var(--space-4);
-      background: var(--lc-bg-soft);
+      background: #fff;
       border-bottom: 1px solid var(--lc-border);
     }
     .one-team-layout {
@@ -876,6 +871,14 @@
         column-gap: clamp(32px, 5vw, 64px);
         align-items: center;
       }
+      .one-team-head {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .one-team-points-col {
+        grid-column: 2;
+        grid-row: 1;
+      }
     }
     .one-team-head {
       max-width: 42rem;
@@ -887,97 +890,81 @@
       margin-bottom: 0;
       max-width: none;
     }
-    .one-team-carousel-col {
+    .one-team-points-col {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       width: 100%;
       min-width: 0;
     }
-    .one-team-carousel-wrap {
-      width: 100%;
-      max-width: 28rem;
-      margin: 0;
-      overflow: hidden;
-      --one-team-slide-h: clamp(5.5rem, 14vw, 8rem);
-    }
-    @media (min-width: 900px) {
-      .one-team-carousel-wrap { max-width: min(100%, 34rem); }
-    }
-    .one-team-carousel {
-      height: var(--one-team-slide-h);
-      overflow: hidden;
-    }
-    .one-team-carousel__track {
+    .one-team-points {
       margin: 0;
       padding: 0;
       list-style: none;
-      transform: translateY(calc(var(--one-team-slide, 0) * var(--one-team-slide-h) * -1));
-      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform;
+      width: 100%;
+      max-width: 34rem;
     }
-    .one-team-carousel__track li {
+    .one-team-points li {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.55em;
-      height: var(--one-team-slide-h);
+      gap: 0.65em;
       margin: 0;
-      padding: 0 0.5rem;
+      padding: 0.65rem 0;
       box-sizing: border-box;
       font-size: clamp(1.75rem, 3vw, 2.25rem);
       font-weight: 700;
       line-height: 1.25;
       letter-spacing: -0.015em;
-      text-align: center;
+      text-align: left;
       color: var(--lc-text-primary);
     }
-    .one-team-carousel__track li::before {
+    .one-team-points__text {
+      flex: 1;
+      min-width: 0;
+      margin-inline-start: 0;
+      transition: margin-inline-start 0.7s cubic-bezier(0.22, 1, 0.32, 1);
+    }
+    .one-team-points.one-team-points--enhanced li {
+      opacity: 0;
+      transform: translate3d(-12px, 1.25rem, 0);
+      transition:
+        opacity 0.7s cubic-bezier(0.22, 1, 0.32, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.32, 1);
+    }
+    .one-team-points.one-team-points--enhanced li.one-team-point--inview {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .one-team-points.one-team-points--enhanced li.one-team-point--inview:nth-child(1) .one-team-points__text { margin-inline-start: 0; }
+    .one-team-points.one-team-points--enhanced li.one-team-point--inview:nth-child(2) .one-team-points__text { margin-inline-start: 0.5rem; }
+    .one-team-points.one-team-points--enhanced li.one-team-point--inview:nth-child(3) .one-team-points__text { margin-inline-start: 1rem; }
+    .one-team-points li:first-child { padding-top: 0; }
+    .one-team-points li:last-child { padding-bottom: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .one-team-points.one-team-points--enhanced li {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .one-team-points__text {
+        transition: none;
+      }
+      .one-team-points.one-team-points--enhanced li.one-team-point--inview .one-team-points__text {
+        margin-inline-start: 0 !important;
+      }
+    }
+    .one-team-points li::before {
       content: "";
-      flex-shrink: 0;
-      width: 0.55em;
+      flex: 0 0 0.85em;
+      width: 0.85em;
       height: 0.28em;
-      margin-top: 0.08em;
+      margin-top: 0;
+      box-sizing: border-box;
       border: solid var(--dm-blue);
       border-width: 0 0 0.11em 0.11em;
       border-radius: 0 0 0 1px;
       transform: rotate(-48deg);
       background: none;
-    }
-    .one-team-carousel__status {
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      height: 1px;
-      width: 1px;
-      margin: -1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap;
-    }
-    .one-team--static .one-team-carousel-wrap {
-      height: auto;
-      overflow: visible;
-    }
-    .one-team--static .one-team-carousel {
-      height: auto;
-      overflow: visible;
-    }
-    .one-team--static .one-team-carousel__track {
-      transform: none !important;
-      transition: none !important;
-    }
-    .one-team--static .one-team-carousel__track li {
-      height: auto;
-      min-height: 0;
-      padding: 0.35rem 0.5rem;
-      margin-bottom: 0.75rem;
-      justify-content: center;
-    }
-    .one-team--static .one-team-carousel__track li.is-clone {
-      display: none;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .one-team-carousel__track { transition: none; }
     }
 
     /* Testimonial */
@@ -1055,20 +1042,23 @@
       background: rgba(26, 43, 60, 0.05);
       border: 1px solid rgba(26, 43, 60, 0.08);
     }
-    /* Final CTA */
+    /* Final CTA — same dark band as footer */
     .final {
-      background: var(--lc-bg-soft);
+      background: var(--bg-primary);
       padding: var(--space-9) var(--space-4);
       text-align: center;
-      border-top: 1px solid var(--lc-border);
-      border-bottom: 1px solid var(--lc-border);
+      border-top: 1px solid var(--border);
+      border-bottom: none;
+    }
+    @media (min-width: 768px) {
+      .final { padding-left: 32px; padding-right: 32px; }
     }
     .final h2 {
       margin: 0 0 var(--space-8);
       font-size: clamp(1.75rem, 3vw, 2.25rem);
       font-weight: 700;
       line-height: 1.3;
-      color: var(--lc-text-primary);
+      color: var(--text-primary);
     }
     .final-ctas {
       display: flex;
@@ -1102,19 +1092,27 @@
     }
     .btn--ghost-final {
       background: transparent;
-      border: 2px solid var(--lc-text-primary);
-      color: var(--lc-text-primary);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: var(--text-primary);
     }
     .btn--ghost-final:hover {
-      border-color: var(--dm-blue);
-      color: var(--dm-blue);
-      background: rgba(0, 174, 239, 0.06);
+      border-color: #fff;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
     }
-    /* Site footer */
+    /* Site footer — continuous with .final (same bg, no seam) */
     .site-footer {
       background: var(--bg-primary);
       color: var(--text-primary);
-      border-top: 1px solid var(--border);
+      border-top: none;
+    }
+    .site-footer__shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4) var(--space-7);
+    }
+    @media (min-width: 768px) {
+      .site-footer__shell { padding-left: 32px; padding-right: 32px; }
     }
     .site-footer__logos {
       display: flex;
@@ -1122,9 +1120,8 @@
       justify-content: center;
       align-items: center;
       gap: clamp(1.25rem, 4vw, 2.75rem);
-      padding: var(--space-8) var(--space-4) var(--space-7);
-      max-width: 1200px;
-      margin: 0 auto;
+      padding: 0 0 var(--space-6);
+      margin: 0;
     }
     .site-footer__logo {
       display: flex;
@@ -1246,21 +1243,15 @@
       letter-spacing: 0.16em;
       color: rgba(255, 255, 255, 0.88);
     }
-    .site-footer__rule {
-      height: 1px;
-      background: var(--border);
-      margin: 0;
-      border: none;
-    }
     .site-footer__bar {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-4);
-      padding: var(--space-5) var(--space-4) var(--space-7);
-      max-width: 1200px;
-      margin: 0 auto;
+      padding: var(--space-6) 0 0;
+      margin: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     .site-footer__copy {
       margin: 0;
@@ -1303,8 +1294,8 @@
       </ul>
       <div class="hero-ctas">
         <div class="hero-cta-wrap">
-          <a class="btn btn--primary" href="#visualizer">See What Your System Would Cost</a>
-          <p class="cta-caption">30-second estimate. No commitment.</p>
+          <a class="btn btn--primary" href="#packages">See Packages &amp; Starting Prices</a>
+          <p class="cta-caption">Three proven setups with clear starting prices.</p>
         </div>
         <a class="btn btn--ghost" href="tel:5869784214">Talk to Your Dedicated Sales Rep</a>
       </div>
@@ -1326,99 +1317,6 @@
         <div class="why-media">
           <img src="assets/ali-aksu-pxHBZEKSQio-unsplash.jpg" alt="Restaurant interior and dining atmosphere" width="1600" height="1200" loading="lazy" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="visualizer">
-    <div class="viz-grid">
-      <div class="viz-copy">
-        <h2>See What Your System Would Cost in 30 Seconds</h2>
-        <p>No two restaurants sound the same. That's why we don't believe in a one-size-fits-all recommendation.</p>
-        <p>Tell us a few details and get an instant estimate.</p>
-      </div>
-      <div class="viz-tool">
-        <p class="viz-tool-title">Your restaurant details</p>
-        <form id="estimator-form" class="viz-estimator-form" novalidate>
-          <div class="viz-field">
-            <div class="viz-label-row">
-              <label for="viz-room-shape">Room shape</label>
-              <span class="viz-required" aria-hidden="true">*</span>
-              <button type="button" class="viz-info" title="The general layout of your dining area helps us suggest speaker placement and coverage." aria-label="About room shape">i</button>
-            </div>
-            <select id="viz-room-shape" class="viz-select" name="room_shape" required>
-              <option value="" disabled selected>Select your floor plan</option>
-              <option value="open-rectangle">Open rectangle</option>
-              <option value="l-shaped">L-shaped</option>
-              <option value="multi-room">Multi-room / split layout</option>
-              <option value="patio-indoor">Patio + indoor</option>
-              <option value="other">Other / not sure</option>
-            </select>
-          </div>
-          <div class="viz-field">
-            <div class="viz-label-row">
-              <label for="viz-sqft">Total square footage</label>
-              <span class="viz-required" aria-hidden="true">*</span>
-              <button type="button" class="viz-info" title="Approximate total area where guests are seated and you want even background music." aria-label="About square footage">i</button>
-            </div>
-            <div class="viz-input-suffix-wrap">
-              <input id="viz-sqft" class="viz-input" type="number" name="square_footage" inputmode="numeric" min="1" max="999999" step="1" placeholder="e.g. 1200" required aria-describedby="viz-sqft-hint" />
-              <span class="viz-input-suffix">sq ft</span>
-            </div>
-            <span id="viz-sqft-hint" class="visually-hidden">Whole number, square feet</span>
-          </div>
-          <div class="viz-field">
-            <div class="viz-label-row">
-              <label for="viz-ceiling">Ceiling height</label>
-              <span class="viz-required" aria-hidden="true">*</span>
-              <button type="button" class="viz-info" title="Taller ceilings often need more speakers or different mounting for even coverage." aria-label="About ceiling height">i</button>
-            </div>
-            <select id="viz-ceiling" class="viz-select" name="ceiling_height" required>
-              <option value="" disabled selected>Select ceiling height</option>
-              <option value="under-9">Under 9 ft</option>
-              <option value="9-12">9–12 ft</option>
-              <option value="12-16">12–16 ft</option>
-              <option value="over-16">Over 16 ft / vaulted</option>
-              <option value="unsure">Not sure</option>
-            </select>
-          </div>
-          <div class="viz-field">
-            <div class="viz-label-row">
-              <label for="viz-noise">Ambient noise level</label>
-              <span class="viz-required" aria-hidden="true">*</span>
-              <button type="button" class="viz-info" title="Louder environments need a system with enough headroom to stay clear at your target volume." aria-label="About ambient noise">i</button>
-            </div>
-            <select id="viz-noise" class="viz-select" name="noise_level" required>
-              <option value="" disabled selected>Select noise environment</option>
-              <option value="quiet">Quiet (fine dining)</option>
-              <option value="moderate">Moderate (typical dining)</option>
-              <option value="lively">Lively (bar-forward, open kitchen)</option>
-              <option value="very-loud">Very loud (sports bar, high traffic)</option>
-            </select>
-          </div>
-          <div class="viz-field">
-            <div class="viz-label-row">
-              <label for="viz-speaker">Speaker preference</label>
-              <span class="viz-required" aria-hidden="true">*</span>
-              <button type="button" class="viz-info" title="We can confirm the best option during your free audio design." aria-label="About speaker preference">i</button>
-            </div>
-            <select id="viz-speaker" class="viz-select" name="speaker_preference" required>
-              <option value="" disabled selected>Select speaker type</option>
-              <option value="wall">Wall-mounted</option>
-              <option value="flush">Flush-mount ceiling</option>
-              <option value="mix">Mix / not sure</option>
-              <option value="help">Help me decide</option>
-            </select>
-          </div>
-          <div class="viz-form-actions">
-            <button type="submit" class="btn btn--on-card-primary">Get My Price Estimate</button>
-          </div>
-          <div id="viz-result" class="viz-result" role="region" aria-live="polite" aria-labelledby="viz-result-title">
-            <h3 id="viz-result-title">Your starting recommendation</h3>
-            <p id="viz-result-summary"></p>
-            <p>Share these details when you <a href="https://dynamicmediamusic.com/get-in-contact/">request your full custom audio layout</a>.</p>
-          </div>
-        </form>
       </div>
     </div>
   </section>
@@ -1471,25 +1369,108 @@
     </div>
   </section>
 
+  <section class="one-team" id="one-team-section" aria-labelledby="team-heading">
+    <div class="container one-team-layout">
+      <div class="one-team-head">
+        <h2 id="team-heading" class="section-head">Designed, Installed, and Supported by One Team</h2>
+      </div>
+      <div class="one-team-points-col">
+        <ul class="one-team-points" aria-label="Benefits of one team">
+          <li><span class="one-team-points__text">No coordinating between vendors</span></li>
+          <li><span class="one-team-points__text">No compatibility issues</span></li>
+          <li><span class="one-team-points__text">One point of contact for everything</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages-section" id="packages" aria-labelledby="packages-heading">
+    <div class="container">
+      <h2 id="packages-heading" class="section-head">Popular Systems for Restaurants Like Yours</h2>
+      <p class="packages-lead">Start with a proven setup, then we&rsquo;ll customize it for your space if needed.</p>
+
+      <div class="packages-grid">
+        <article class="package-card">
+          <h3 class="package-card__title">Essential Dining System</h3>
+          <p class="package-card__desc">A simple, reliable setup for smaller dining rooms.</p>
+          <p class="package-card__fit">Best for restaurants up to ~2,000 sq ft</p>
+          <ul class="package-card__list">
+            <li>4 to 6 speakers</li>
+            <li>Compact commercial amplifier</li>
+            <li>Even background music coverage for smaller spaces</li>
+          </ul>
+          <div class="package-card__pricing">
+            <p class="package-card__price-prefix">Professional system starting at</p>
+            <div class="package-card__price-main">
+              <span class="package-card__amount">$1,950</span>
+              <span class="package-card__installed">installed</span>
+            </div>
+            <p class="package-card__value-note">Includes equipment, design, and professional installation</p>
+          </div>
+          <a class="btn btn--on-card-primary" href="https://dynamicmediamusic.com/get-in-contact/">See My Best Fit</a>
+        </article>
+
+        <article class="package-card package-card--popular">
+          <div class="package-card__badge-wrap">
+            <span class="package-card__badge">Most Popular</span>
+          </div>
+          <h3 class="package-card__title">Standard Restaurant System</h3>
+          <p class="package-card__desc">Balanced coverage for the dining room, bar, or main guest areas.</p>
+          <p class="package-card__fit">Best for restaurants around 2,000 to 5,000 sq ft</p>
+          <ul class="package-card__list">
+            <li>8 to 12 speakers</li>
+            <li>Commercial amplifier sized for your space</li>
+            <li>Great for dining rooms with higher traffic and more seating</li>
+          </ul>
+          <div class="package-card__pricing">
+            <p class="package-card__price-prefix">Professional system starting at</p>
+            <div class="package-card__price-main">
+              <span class="package-card__amount">$3,200</span>
+              <span class="package-card__installed">installed</span>
+            </div>
+            <p class="package-card__value-note">Includes equipment, design, and professional installation</p>
+          </div>
+          <a class="btn btn--on-card-primary" href="https://dynamicmediamusic.com/get-in-contact/">Get My Custom Plan</a>
+        </article>
+
+        <article class="package-card">
+          <h3 class="package-card__title">Multi-Zone Restaurant System</h3>
+          <p class="package-card__desc">Designed for larger spaces with separate listening areas.</p>
+          <p class="package-card__fit">Best for large restaurants, bars, patios, or multi-zone layouts</p>
+          <ul class="package-card__list">
+            <li>12+ speakers</li>
+            <li>Zoned audio coverage</li>
+            <li>Ideal for dining room + bar + patio or larger footprints</li>
+          </ul>
+          <div class="package-card__pricing">
+            <p class="package-card__price-prefix">Professional system starting at</p>
+            <div class="package-card__price-main">
+              <span class="package-card__amount">$5,800</span>
+              <span class="package-card__installed">installed</span>
+            </div>
+            <p class="package-card__value-note">Includes equipment, design, and professional installation</p>
+          </div>
+          <a class="btn btn--on-card-primary" href="tel:5869784214">Talk to My Rep</a>
+        </article>
+      </div>
+
+      <p class="packages-note">Final pricing depends on layout, speaker count, mounting style, and installation needs.</p>
+    </div>
+  </section>
+
   <section class="framing" aria-labelledby="framing-heading" id="framing-section">
     <div class="container framing-layout">
       <div class="framing-head">
         <h2 id="framing-heading" class="section-head">Now Is the Right Time to Switch.</h2>
         <p class="framing-close">Don't install a temporary fix. Get a system designed to last.</p>
-        <p id="framing-live" class="framing-carousel__status" aria-live="polite">Renovating your space</p>
       </div>
-      <div class="framing-carousel-col">
-        <div class="framing-carousel-wrap">
-          <div class="framing-carousel" aria-hidden="true">
-            <ul class="framing-carousel__track" id="framing-track">
-              <li>Renovating your space</li>
-              <li>Opening a new location</li>
-              <li>Replacing broken or aging equipment</li>
-              <li>Expanding your dining area</li>
-              <li class="is-clone" aria-hidden="true">Renovating your space</li>
-            </ul>
-          </div>
-        </div>
+      <div class="framing-points-col">
+        <ul class="framing-points" aria-label="Common reasons to upgrade">
+          <li><span class="framing-points__text">Renovating your space</span></li>
+          <li><span class="framing-points__text">Opening a new location</span></li>
+          <li><span class="framing-points__text">Replacing broken or aging equipment</span></li>
+          <li><span class="framing-points__text">Expanding your dining area</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1609,7 +1590,7 @@
         <div class="process-col">
           <div class="process-num" aria-hidden="true">1</div>
           <h3>Tell Us About Your Space</h3>
-          <p>Share a few details (or use the estimator)</p>
+          <p>Pick a package or share your layout&mdash;we&rsquo;ll tailor everything from there</p>
         </div>
         <div class="process-col">
           <div class="process-num" aria-hidden="true">2</div>
@@ -1627,27 +1608,6 @@
           <span class="process-callout__lead">Our technicians serve</span><span class="process-callout__accent"> every U.S. zip code.</span>
         </p>
         <span class="process-callout__rule" aria-hidden="true"></span>
-      </div>
-    </div>
-  </section>
-
-  <section class="one-team" id="one-team-section" aria-labelledby="team-heading">
-    <div class="container one-team-layout">
-      <div class="one-team-head">
-        <h2 id="team-heading" class="section-head">Designed, Installed, and Supported by One Team</h2>
-        <p id="one-team-live" class="one-team-carousel__status" aria-live="polite">No coordinating between vendors</p>
-      </div>
-      <div class="one-team-carousel-col">
-        <div class="one-team-carousel-wrap">
-          <div class="one-team-carousel" aria-hidden="true">
-            <ul class="one-team-carousel__track" id="one-team-track">
-              <li>No coordinating between vendors</li>
-              <li>No compatibility issues</li>
-              <li>One point of contact for everything</li>
-              <li class="is-clone" aria-hidden="true">No coordinating between vendors</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1675,7 +1635,7 @@
       <h2>The Easiest Upgrade Your Restaurant Will Ever Make</h2>
       <div class="final-ctas">
         <div class="final-cta-row">
-          <a class="btn btn--primary" href="#visualizer">See What Your System Would Cost</a>
+          <a class="btn btn--primary" href="#packages">See Packages &amp; Starting Prices</a>
           <a class="btn btn--ghost-final" href="tel:5869784214">Talk to Your Dedicated Rep</a>
         </div>
       </div>
@@ -1683,249 +1643,121 @@
   </section>
 
   <footer class="site-footer" role="contentinfo">
-    <div class="site-footer__logos">
-      <a class="site-footer__logo" href="https://dynamicmediamusic.com/" aria-label="Dynamic Media">
-        <img src="assets/DM_logo_2016_whiteblue.png" alt="" width="200" height="56" decoding="async" />
-      </a>
-      <a class="site-footer__commercial-link" href="https://dm-audio.dynamicmediamusic.com/" aria-label="DM Commercial Audio">
-        <span class="site-footer__commercial-lockup">
-          <span class="site-footer__commercial-dm">DM</span>
-          <span class="site-footer__commercial-meta">
-            <span class="site-footer__commercial-sub">Commercial</span>
-            <span class="site-footer__commercial-audio">AUDIO</span>
+    <div class="site-footer__shell">
+      <div class="site-footer__logos">
+        <a class="site-footer__logo" href="https://dynamicmediamusic.com/" aria-label="Dynamic Media">
+          <img src="assets/DM_logo_2016_whiteblue.png" alt="" width="200" height="56" decoding="async" />
+        </a>
+        <a class="site-footer__commercial-link" href="https://dm-audio.dynamicmediamusic.com/" aria-label="DM Commercial Audio">
+          <span class="site-footer__commercial-lockup">
+            <span class="site-footer__commercial-dm">DM</span>
+            <span class="site-footer__commercial-meta">
+              <span class="site-footer__commercial-sub">Commercial</span>
+              <span class="site-footer__commercial-audio">AUDIO</span>
+            </span>
           </span>
-        </span>
-      </a>
-      <a class="site-footer__partner site-footer__partner--soundtrack" href="https://www.soundtrackyourbrand.com/" rel="noopener noreferrer" target="_blank">
-        <span class="site-footer__reseller">Reseller of</span>
-        <span class="site-footer__soundtrack-word">
-          <svg class="site-footer__soundtrack-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.35" />
-            <path d="M12 6v12M8 9v6M16 9v6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
-          </svg>
-          Soundtrack
-        </span>
-      </a>
-      <a class="site-footer__partner site-footer__partner--sirius" href="https://www.siriusxm.com/business" rel="noopener noreferrer" target="_blank">
-        <span class="site-footer__sirius-main">SiriusXM</span>
-        <span class="site-footer__sirius-sub">FOR BUSINESS</span>
-      </a>
-    </div>
-    <hr class="site-footer__rule" />
-    <div class="site-footer__bar">
-      <p class="site-footer__copy">© 2026 Dynamic Media</p>
-      <nav class="site-footer__legal" aria-label="Legal">
-        <a href="https://dynamicmediamusic.com/privacy-policy/">Privacy Policy</a>
-        <a href="https://dynamicmediamusic.com/terms-and-conditions/">Terms and Conditions</a>
-      </nav>
+        </a>
+        <a class="site-footer__partner site-footer__partner--soundtrack" href="https://www.soundtrackyourbrand.com/" rel="noopener noreferrer" target="_blank">
+          <span class="site-footer__reseller">Reseller of</span>
+          <span class="site-footer__soundtrack-word">
+            <svg class="site-footer__soundtrack-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.35" />
+              <path d="M12 6v12M8 9v6M16 9v6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            </svg>
+            Soundtrack
+          </span>
+        </a>
+        <a class="site-footer__partner site-footer__partner--sirius" href="https://www.siriusxm.com/business" rel="noopener noreferrer" target="_blank">
+          <span class="site-footer__sirius-main">SiriusXM</span>
+          <span class="site-footer__sirius-sub">FOR BUSINESS</span>
+        </a>
+      </div>
+      <div class="site-footer__bar">
+        <p class="site-footer__copy">© 2026 Dynamic Media</p>
+        <nav class="site-footer__legal" aria-label="Legal">
+          <a href="https://dynamicmediamusic.com/privacy-policy/">Privacy Policy</a>
+          <a href="https://dynamicmediamusic.com/terms-and-conditions/">Terms and Conditions</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
   <script>
     (function () {
-      var estimatorForm = document.getElementById('estimator-form');
-      if (!estimatorForm) return;
-      var resultEl = document.getElementById('viz-result');
-      var summaryEl = document.getElementById('viz-result-summary');
-      estimatorForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!estimatorForm.checkValidity()) {
-          estimatorForm.reportValidity();
-          return;
-        }
-        var room = document.getElementById('viz-room-shape').selectedOptions[0].text;
-        var sqft = document.getElementById('viz-sqft').value;
-        var ceiling = document.getElementById('viz-ceiling').selectedOptions[0].text;
-        var noise = document.getElementById('viz-noise').selectedOptions[0].text;
-        var speakerEl = document.getElementById('viz-speaker');
-        var speakerVal = speakerEl.value;
-        var speakerPhrase;
-        if (speakerVal === 'wall') speakerPhrase = 'wall-mounted speakers';
-        else if (speakerVal === 'flush') speakerPhrase = 'flush-mount ceiling speakers';
-        else if (speakerVal === 'mix') speakerPhrase = 'a mix of speaker types (finalized with our team)';
-        else speakerPhrase = 'speaker type we will recommend for you';
-        var n = parseInt(sqft, 10);
-        var sqftStr = isNaN(n) ? sqft : n.toLocaleString();
-        var summary =
-          'Based on about ' +
-          sqftStr +
-          ' sq ft, a floor plan described as "' +
-          room +
-          '," ' +
-          ceiling +
-          ' ceilings, ' +
-          noise.toLowerCase() +
-          ' ambient noise, and ' +
-          speakerPhrase +
-          ', we will use this profile as the starting point for your estimate and recommended setup. Speaker count, amplifier sizing, and mounting details are finalized in your free custom audio design.';
-        summaryEl.textContent = summary;
-        resultEl.classList.add('is-visible');
-        resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
-    })();
-    (function () {
       var section = document.getElementById('framing-section');
-      var track = document.getElementById('framing-track');
-      var live = document.getElementById('framing-live');
-      if (!section || !track || !live) return;
+      if (!section) return;
+      var list = section.querySelector('.framing-points');
+      if (!list) return;
+      var items = list.querySelectorAll('li');
+      if (!items.length) return;
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        list.classList.add('framing-points--enhanced');
+      }
+      function revealAll() {
+        items.forEach(function (li) {
+          li.classList.add('framing-point--inview');
+        });
+      }
       if (reduceMotion) {
-        section.classList.add('framing--static');
-        var fcStatic = section.querySelector('.framing-carousel');
-        if (fcStatic) fcStatic.removeAttribute('aria-hidden');
-        if (live) live.setAttribute('aria-hidden', 'true');
         return;
       }
-      var REAL_COUNT = 4;
-      var current = 0;
-      var intervalMs = 3200;
-      var timer = null;
-
-      function setLiveText(index) {
-        var i = index >= REAL_COUNT ? 0 : index;
-        var li = track.children[i];
-        if (li) live.textContent = li.textContent;
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('framing-point--inview');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.2 }
+        );
+        items.forEach(function (li) {
+          io.observe(li);
+        });
+      } else {
+        revealAll();
       }
-
-      function applySlide(index, instant) {
-        if (instant) {
-          track.style.transition = 'none';
-        }
-        track.style.setProperty('--framing-slide', String(index));
-        if (instant) {
-          void track.offsetHeight;
-          track.style.transition = '';
-        }
-        setLiveText(index);
-      }
-
-      function onTransitionEnd(e) {
-        if (e.propertyName !== 'transform') return;
-        if (current === REAL_COUNT) {
-          current = 0;
-          applySlide(0, true);
-        }
-      }
-
-      track.addEventListener('transitionend', function (e) {
-        if (e.target !== track) return;
-        onTransitionEnd(e);
-      });
-
-      function advance() {
-        if (current < REAL_COUNT - 1) {
-          current++;
-          applySlide(current, false);
-        } else if (current === REAL_COUNT - 1) {
-          current = REAL_COUNT;
-          applySlide(current, false);
-        }
-      }
-
-      function start() {
-        if (timer) return;
-        timer = window.setInterval(advance, intervalMs);
-      }
-
-      function stop() {
-        if (timer) {
-          window.clearInterval(timer);
-          timer = null;
-        }
-      }
-
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) start();
-            else stop();
-          });
-        },
-        { rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
-      );
-      io.observe(section);
-      setLiveText(0);
     })();
     (function () {
       var section = document.getElementById('one-team-section');
-      var track = document.getElementById('one-team-track');
-      var live = document.getElementById('one-team-live');
-      if (!section || !track || !live) return;
+      if (!section) return;
+      var list = section.querySelector('.one-team-points');
+      if (!list) return;
+      var items = list.querySelectorAll('li');
+      if (!items.length) return;
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        list.classList.add('one-team-points--enhanced');
+      }
+      function revealAll() {
+        items.forEach(function (li) {
+          li.classList.add('one-team-point--inview');
+        });
+      }
       if (reduceMotion) {
-        section.classList.add('one-team--static');
-        var oc = section.querySelector('.one-team-carousel');
-        if (oc) oc.removeAttribute('aria-hidden');
-        if (live) live.setAttribute('aria-hidden', 'true');
         return;
       }
-      var REAL_COUNT = 3;
-      var current = 0;
-      var intervalMs = 3200;
-      var timer = null;
-
-      function setLiveText(index) {
-        var i = index >= REAL_COUNT ? 0 : index;
-        var li = track.children[i];
-        if (li) live.textContent = li.textContent;
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('one-team-point--inview');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.2 }
+        );
+        items.forEach(function (li) {
+          io.observe(li);
+        });
+      } else {
+        revealAll();
       }
-
-      function applySlide(index, instant) {
-        if (instant) track.style.transition = 'none';
-        track.style.setProperty('--one-team-slide', String(index));
-        if (instant) {
-          void track.offsetHeight;
-          track.style.transition = '';
-        }
-        setLiveText(index);
-      }
-
-      function onTransitionEnd(e) {
-        if (e.propertyName !== 'transform') return;
-        if (current === REAL_COUNT) {
-          current = 0;
-          applySlide(0, true);
-        }
-      }
-
-      track.addEventListener('transitionend', function (e) {
-        if (e.target !== track) return;
-        onTransitionEnd(e);
-      });
-
-      function advance() {
-        if (current < REAL_COUNT - 1) {
-          current++;
-          applySlide(current, false);
-        } else if (current === REAL_COUNT - 1) {
-          current = REAL_COUNT;
-          applySlide(current, false);
-        }
-      }
-
-      function start() {
-        if (timer) return;
-        timer = window.setInterval(advance, intervalMs);
-      }
-
-      function stop() {
-        if (timer) {
-          window.clearInterval(timer);
-          timer = null;
-        }
-      }
-
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) start();
-            else stop();
-          });
-        },
-        { rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
-      );
-      io.observe(section);
-      setLiveText(0);
     })();
   </script>
 </body>
