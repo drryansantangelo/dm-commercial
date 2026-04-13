@@ -1374,7 +1374,7 @@
       <div class="final-ctas">
         <div class="final-cta-row">
           <a class="btn btn--primary" href="#" data-modal-open>Get My Free Audio System Design</a>
-          <a class="btn btn--ghost-final" href="tel:5869784214">Talk to Your Dedicated Sales Rep</a>
+          <a class="btn btn--ghost-final" href="#" data-callmodal-open>Talk to Your Dedicated Sales Rep</a>
         </div>
       </div>
     </div>
@@ -1419,6 +1419,55 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal-overlay" id="callModal" role="dialog" aria-modal="true" aria-labelledby="call-modal-title">
+    <div class="modal">
+      <button class="modal__close" aria-label="Close" data-callmodal-close>&times;</button>
+
+      <div class="modal__header" id="callModalFormHeader">
+        <h2 class="modal__title" id="call-modal-title">Talk to Your Dedicated Sales Rep</h2>
+        <p class="modal__subtitle">Leave your details and your dedicated Dynamic Media rep will reach out to you directly.</p>
+      </div>
+
+      <form class="modal__form" id="callForm">
+        <div class="modal__row modal__row--half">
+          <div class="modal__field">
+            <label class="modal__label" for="callFirstName">First Name</label>
+            <input class="modal__input" type="text" id="callFirstName" name="firstName" placeholder="First name" required />
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="callLastName">Last Name</label>
+            <input class="modal__input" type="text" id="callLastName" name="lastName" placeholder="Last name" required />
+          </div>
+        </div>
+        <div class="modal__field">
+          <label class="modal__label" for="callBusinessName">Business Name</label>
+          <input class="modal__input" type="text" id="callBusinessName" name="businessName" placeholder="Your business name" required />
+        </div>
+        <div class="modal__row modal__row--half">
+          <div class="modal__field">
+            <label class="modal__label" for="callPhone">Phone Number</label>
+            <input class="modal__input" type="tel" id="callPhone" name="phone" placeholder="(555) 555-5555" required />
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="callEmail">Email</label>
+            <input class="modal__input" type="email" id="callEmail" name="email" placeholder="you@business.com" required />
+          </div>
+        </div>
+        <button class="btn btn--primary modal__submit" type="submit">Request a Call Back</button>
+        <p class="modal__footer-note">No obligation. Your dedicated rep will call you directly.</p>
+      </form>
+
+      <div class="modal__success" id="callModalSuccess">
+        <div class="modal__success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 class="modal__success-title">We&rsquo;ll Be in Touch</h2>
+        <p class="modal__success-msg">Thank you! Your dedicated Dynamic Media rep will reach out to you shortly.</p>
+        <button class="btn btn--primary modal__success-close" data-callmodal-close>Close</button>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal">
@@ -1504,6 +1553,68 @@
       });
 
       document.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          closeModal();
+          setTimeout(resetModal, 300);
+        });
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) {
+          closeModal();
+          setTimeout(resetModal, 300);
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+          closeModal();
+          setTimeout(resetModal, 300);
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.style.display = 'none';
+        formHeader.style.display = 'none';
+        success.classList.add('is-visible');
+      });
+    })();
+
+    (function () {
+      var overlay = document.getElementById('callModal');
+      var form = document.getElementById('callForm');
+      var formHeader = document.getElementById('callModalFormHeader');
+      var success = document.getElementById('callModalSuccess');
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        var first = form.querySelector('input');
+        if (first) setTimeout(function () { first.focus(); }, 100);
+      }
+
+      function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      function resetModal() {
+        form.reset();
+        form.style.display = '';
+        formHeader.style.display = '';
+        success.classList.remove('is-visible');
+      }
+
+      document.querySelectorAll('[data-callmodal-open]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          resetModal();
+          openModal(e);
+        });
+      });
+
+      document.querySelectorAll('[data-callmodal-close]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           closeModal();
           setTimeout(resetModal, 300);
