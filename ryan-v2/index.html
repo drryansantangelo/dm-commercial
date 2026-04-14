@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commercial Audio | Dynamic Media</title>
+  <meta name="description" content="Factory-direct commercial audio for restaurants. Free custom design, nationwide installation, one team from music to equipment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --dm-blue: #00aeef;
+      --dm-blue-hover: #0099d6;
+      --bg-primary: #0d1117;
+      --bg-secondary: #121820;
+      --border: #1e2d3d;
+      --text-primary: #ffffff;
+      --text-secondary: #b0bec5;
+      --text-muted: #607080;
+      --lc-bg-white: #ffffff;
+      --lc-bg-soft: #f3f4f6;
+      --lc-text-primary: #1a2b3c;
+      --lc-text-body: #3d4f5c;
+      --lc-text-muted: #5c6b7a;
+      --lc-border: #cfd8dc;
+      --radius: 6px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 48px;
+      --space-8: 64px;
+      --space-9: 96px;
+      --font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
+      background: var(--lc-bg-soft);
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); }
+    @media (min-width: 768px) { .container { padding: 0 32px; } }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-9) var(--space-4);
+      background-color: var(--bg-primary);
+      background-image:
+        linear-gradient(
+          to right,
+          rgba(13, 17, 23, 0.92) 0%,
+          rgba(13, 17, 23, 0.72) 32%,
+          rgba(13, 17, 23, 0.35) 52%,
+          rgba(13, 17, 23, 0) 78%
+        ),
+        url("../assets/negley-stockman-3e_i3-KLhe4-unsplash.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 768px) { .hero { padding-left: 40px; padding-right: 40px; } }
+    .hero__inner { max-width: 1200px; margin: 0 auto; }
+    .hero__logo { display: inline-block; margin-bottom: 40px; }
+    .hero__logo img { width: 202px; max-width: 100%; height: auto; display: block; }
+    .hero h1 {
+      margin: 0;
+      max-width: 42rem;
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+    .hero .sub {
+      margin: var(--space-4) 0 0;
+      max-width: 36rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .trust-line {
+      margin: 24px 0 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .hero-bullets {
+      list-style: none;
+      margin: var(--space-5) 0;
+      padding: 0;
+      max-width: 36rem;
+    }
+    .hero-bullets li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .hero-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--dm-blue);
+    }
+    .hero-ctas {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: var(--space-4);
+      margin-top: var(--space-5);
+    }
+    .hero-ctas .btn { min-width: 0; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      padding: 14px 32px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn--primary {
+      background: var(--dm-blue);
+      border-color: var(--dm-blue);
+      color: #fff;
+    }
+    .btn--primary:hover {
+      background: var(--dm-blue-hover);
+      border-color: var(--dm-blue-hover);
+      color: #fff;
+    }
+    .btn--ghost {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.4);
+      color: var(--text-primary);
+    }
+    .btn--ghost:hover { border-color: #fff; background: rgba(255, 255, 255, 0.05); }
+    .btn--primary-light {
+      background: #fff;
+      border-color: #fff;
+      color: var(--dm-blue);
+    }
+    .btn--primary-light:hover { background: rgba(255, 255, 255, 0.92); }
+    .btn--ghost-light {
+      background: transparent;
+      border-color: #fff;
+      color: #fff;
+    }
+    .btn--ghost-light:hover { background: rgba(255, 255, 255, 0.12); }
+    .cta-caption {
+      margin: 6px 0 0;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .hero-cta-wrap { display: flex; flex-direction: column; align-items: flex-start; }
+
+    /* Section titles */
+    .section-head {
+      text-align: center;
+      margin-bottom: var(--space-4);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--lc-text-primary);
+    }
+    .section-sub {
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto var(--space-8);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
+    }
+
+    /* Discover section */
+    .discover {
+      border-top: 1px solid var(--lc-border);
+      border-bottom: 1px solid var(--lc-border);
+      background: var(--lc-bg-white);
+      padding: var(--space-9) var(--space-4);
+    }
+    @media (min-width: 768px) { .discover { padding-left: 32px; padding-right: 32px; } }
+    .discover__header {
+      max-width: 48rem;
+      margin: 0 auto var(--space-7);
+      text-align: center;
+    }
+    .discover__title {
+      margin: 0 0 var(--space-4);
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--lc-text-primary);
+    }
+    .discover__sub {
+      margin: 0;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
+      text-wrap: balance;
+    }
+    .discover__kicker {
+      margin: 0 0 var(--space-6);
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dm-blue);
+    }
+    .discover__grid {
+      display: grid;
+      gap: var(--space-5);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .discover__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .discover__card {
+      position: relative;
+      padding: var(--space-6);
+      background: var(--lc-bg-soft);
+      border: 1px solid var(--lc-border);
+      border-radius: 12px;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .discover__card:hover {
+      border-color: rgba(0, 174, 239, 0.4);
+      box-shadow: 0 8px 32px rgba(0, 174, 239, 0.08);
+    }
+    .discover__card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: var(--space-5);
+      color: var(--dm-blue);
+      background: rgba(0, 174, 239, 0.1);
+      border: 1px solid rgba(0, 174, 239, 0.25);
+      border-radius: 12px;
+    }
+    .discover__card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    .discover__card-title {
+      margin: 0 0 10px;
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--lc-text-primary);
+    }
+    .discover__card-body {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--lc-text-body);
+    }
+    .discover__cta {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-8);
+    }
+
+    /* Package pricing — primary above the fold */
+    .packages-section {
+      border-bottom: 1px solid var(--lc-border);
+      background: var(--lc-bg-soft);
+      padding: var(--space-9) var(--space-4);
+    }
+    @media (min-width: 768px) { .packages-section { padding-left: 32px; padding-right: 32px; } }
+    .packages-section .section-head { text-align: center; max-width: 52rem; margin-left: auto; margin-right: auto; }
+    .packages-section .packages-lead {
+      margin: var(--space-4) auto 0;
+      max-width: 40rem;
+      text-align: center;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--lc-text-body);
+    }
+    .packages-grid {
+      display: grid;
+      gap: var(--space-6);
+      max-width: 1120px;
+      margin: var(--space-8) auto 0;
+    }
+    @media (min-width: 900px) {
+      .packages-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); align-items: stretch; }
+    }
+    .package-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--lc-bg-white);
+      border: 1px solid rgba(0, 174, 239, 0.35);
+      border-radius: 12px;
+      padding: var(--space-6);
+      box-shadow: 0 8px 32px rgba(26, 43, 60, 0.06);
+    }
+    .package-card--popular {
+      position: relative;
+      z-index: 0;
+      border-color: rgba(0, 174, 239, 0.5);
+      box-shadow: 0 10px 40px rgba(0, 174, 239, 0.12), 0 8px 32px rgba(26, 43, 60, 0.06);
+    }
+    .package-card--popular .package-card__badge-wrap {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -58%);
+      margin: 0;
+      width: max-content;
+      max-width: calc(100% - 24px);
+      text-align: center;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .package-card--popular .package-card__badge {
+      pointer-events: auto;
+    }
+    .package-card__badge {
+      display: inline-block;
+      padding: 5px 14px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--dm-blue);
+      border-radius: 999px;
+      box-shadow: 0 2px 10px rgba(0, 174, 239, 0.35);
+    }
+    .package-card__title {
+      margin: 0 0 8px;
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--lc-text-primary);
+    }
+    .package-card__desc {
+      margin: 0 0 10px;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--lc-text-body);
+    }
+    .package-card__fit {
+      margin: 0 0 var(--space-4);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--dm-blue);
+    }
+    .package-card__list {
+      margin: 0 0 var(--space-5);
+      padding: 0;
+      list-style: none;
+      flex: 1;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--lc-text-body);
+    }
+    .package-card__list li {
+      position: relative;
+      padding-left: 1.35rem;
+      margin-bottom: 10px;
+    }
+    .package-card__list li:last-child { margin-bottom: 0; }
+    .package-card__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--dm-blue);
+      opacity: 0.85;
+    }
+    .package-card__pricing {
+      margin: 0 0 var(--space-5);
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(0, 174, 239, 0.15);
+    }
+    .package-card__price-prefix {
+      margin: 0 0 8px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.01em;
+      color: var(--lc-text-muted);
+    }
+    .package-card__price-main {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 0.65rem;
+      margin: 0 0 12px;
+    }
+    .package-card__amount {
+      font-size: clamp(1.85rem, 4.5vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      color: var(--dm-blue);
+    }
+    .package-card__installed {
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--lc-text-muted);
+    }
+    .package-card__value-note {
+      margin: 0;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--lc-text-body);
+    }
+    .package-card .btn {
+      width: 100%;
+      max-width: none;
+      margin-top: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .packages-reassurance {
+      margin: var(--space-7) auto 0;
+      max-width: 36rem;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--lc-text-body);
+    }
+    .packages-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-6);
+    }
+    .btn--on-card-primary {
+      background: var(--dm-blue);
+      border-color: var(--dm-blue);
+      color: #fff;
+    }
+    .btn--on-card-primary:hover {
+      background: var(--dm-blue-hover);
+      border-color: var(--dm-blue-hover);
+      color: #fff;
+    }
+
+    /* One team */
+
+    /* Triggers */
+    .triggers {
+      padding: var(--space-9) var(--space-4);
+      background: var(--lc-bg-white);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    @media (min-width: 768px) { .triggers { padding-left: 32px; padding-right: 32px; } }
+    .triggers__sub {
+      text-align: center;
+      max-width: 36rem;
+      margin: 0 auto var(--space-8);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--lc-text-body);
+    }
+    .triggers__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    @media (min-width: 640px) {
+      .triggers__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+    }
+    .triggers__card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-6) var(--space-5);
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--lc-text-primary);
+      background: var(--lc-bg-soft);
+      border: 1px solid var(--lc-border);
+      border-radius: 10px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .triggers__card:hover {
+      border-color: rgba(0, 174, 239, 0.35);
+      box-shadow: 0 4px 16px rgba(0, 174, 239, 0.06);
+    }
+
+    /* Process */
+    .process {
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-9) var(--space-4);
+      background-color: var(--bg-primary);
+      background-image:
+        linear-gradient(
+          rgba(13, 17, 23, 0.82),
+          rgba(13, 17, 23, 0.88)
+        ),
+        url("../assets/restaurant-interior-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 768px) { .process { padding-left: 32px; padding-right: 32px; } }
+    .process .section-head {
+      color: var(--text-primary);
+      margin-bottom: var(--space-8);
+    }
+    .process-grid {
+      display: grid;
+      gap: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .process-grid { grid-template-columns: repeat(3, 1fr); gap: 0; }
+      .process-col { padding: 0 var(--space-6); border-left: 1px solid var(--border); }
+      .process-col:first-child { padding-left: 0; border-left: none; }
+    }
+    .process-num {
+      width: 48px;
+      height: 48px;
+      margin-bottom: var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 2px solid var(--dm-blue);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .process-col h3 { margin: 0; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; color: var(--text-primary); }
+    .process-col p { margin: var(--space-3) 0 0; color: var(--text-secondary); }
+
+    /* One team */
+    .one-team {
+      padding: var(--space-9) var(--space-4);
+      background: var(--lc-bg-soft);
+      border-top: 1px solid var(--lc-border);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    @media (min-width: 768px) { .one-team { padding-left: 32px; padding-right: 32px; } }
+    .one-team-layout {
+      display: grid;
+      gap: var(--space-7);
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .one-team-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: clamp(32px, 5vw, 64px);
+        align-items: start;
+      }
+    }
+    .one-team-head {
+      max-width: 42rem;
+    }
+    .one-team .section-head {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: var(--space-4);
+      max-width: none;
+    }
+    .one-team-sub {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
+    }
+    .one-team-points-col {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      min-width: 0;
+    }
+    .one-team-bullets {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      max-width: 34rem;
+    }
+    .one-team-bullets li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--lc-text-body);
+    }
+    .one-team-bullets li:last-child { margin-bottom: 0; }
+    .one-team-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--dm-blue);
+    }
+    .one-team-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-8);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: var(--space-9) var(--space-4);
+      background: var(--lc-bg-soft);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    @media (min-width: 768px) { .testimonials { padding-left: 32px; padding-right: 32px; } }
+    .testimonials__trust-badge {
+      margin: 0 0 var(--space-4);
+      text-align: center;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dm-blue);
+    }
+    .testimonials__sub {
+      text-align: center;
+      max-width: 40rem;
+      margin: 0 auto var(--space-8);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--lc-text-body);
+    }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    @media (min-width: 640px) {
+      .testimonials__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .testimonials__card {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: var(--space-6);
+      background: var(--lc-bg-white);
+      border: 1px solid var(--lc-border);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(26, 43, 60, 0.05);
+    }
+    .testimonials__mark {
+      display: block;
+      margin: 0 0 4px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.5rem;
+      line-height: 0.75;
+      font-weight: 700;
+      color: var(--dm-blue);
+    }
+    .testimonials__quote {
+      flex: 1;
+      margin: 0 0 var(--space-5);
+      padding: 0;
+      border: 0;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--lc-text-body);
+      font-style: normal;
+    }
+    .testimonials__quote p { margin: 0; }
+    .testimonials__cite {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--lc-border);
+    }
+    .testimonials__name {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--lc-text-primary);
+    }
+    .testimonials__role {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--lc-text-muted);
+    }
+    /* Final CTA */
+    .final {
+      background: var(--bg-primary);
+      padding: var(--space-9) var(--space-4);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: none;
+    }
+    @media (min-width: 768px) {
+      .final { padding-left: 32px; padding-right: 32px; }
+    }
+    .final__sub {
+      margin: var(--space-4) auto var(--space-8);
+      max-width: 36rem;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+    .final h2 {
+      margin: 0;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+    .final-ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      width: 100%;
+    }
+    .final-cta-row {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-4);
+      width: 100%;
+      max-width: 22rem;
+    }
+    @media (min-width: 640px) {
+      .final-cta-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: none;
+        width: auto;
+      }
+      .final-cta-row .btn {
+        flex: 0 0 auto;
+        min-height: 48px;
+        box-sizing: border-box;
+      }
+    }
+    .btn--ghost-final {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: var(--text-primary);
+    }
+    .btn--ghost-final:hover {
+      border-color: #fff;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    /* Site footer */
+    .site-footer {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border-top: none;
+    }
+    .site-footer__shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4) var(--space-7);
+    }
+    @media (min-width: 768px) {
+      .site-footer__shell { padding-left: 32px; padding-right: 32px; }
+    }
+    .site-footer__logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(1.25rem, 4vw, 2.75rem);
+      padding: 0 0 var(--space-6);
+      margin: 0;
+    }
+    .site-footer__logo {
+      display: flex;
+      align-items: center;
+      line-height: 0;
+      opacity: 0.95;
+      transition: opacity 0.15s ease;
+    }
+    .site-footer__logo:hover { opacity: 1; }
+    .site-footer__logo img {
+      height: clamp(32px, 5vw, 42px);
+      width: auto;
+      display: block;
+    }
+    .site-footer__commercial-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+    }
+    .site-footer__commercial-link:hover { color: #fff; opacity: 0.92; }
+    .site-footer__commercial-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .site-footer__commercial-dm {
+      font-size: clamp(1.75rem, 3.5vw, 2.125rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+    .site-footer__commercial-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      line-height: 1.1;
+    }
+    .site-footer__commercial-sub {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+    }
+    .site-footer__commercial-audio {
+      display: inline-block;
+      padding: 2px 7px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 2px;
+    }
+    .site-footer__partner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 16px;
+      min-height: 48px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .site-footer__partner:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #fff;
+    }
+    .site-footer__partner--soundtrack .site-footer__reseller {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .site-footer__partner--soundtrack .site-footer__soundtrack-word {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .site-footer__soundtrack-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.95;
+    }
+    .site-footer__partner--sirius {
+      flex-direction: column;
+      padding: 10px 18px;
+      border-radius: 6px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+    .site-footer__partner--sirius:hover {
+      border-color: rgba(255, 255, 255, 0.65);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .site-footer__sirius-main {
+      font-size: 0.9375rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .site-footer__sirius-sub {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .site-footer__bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-6) 0 0;
+      margin: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .site-footer__copy {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .site-footer__legal {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .site-footer__legal a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--dm-blue);
+      text-decoration: none;
+    }
+    .site-footer__legal a:hover {
+      color: var(--dm-blue-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Contact Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(13, 17, 23, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+    }
+    .modal-overlay.is-open { display: flex; }
+    .modal {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: var(--lc-bg-white);
+      border-radius: 14px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+      animation: modalIn 0.25s cubic-bezier(0.22, 1, 0.32, 1);
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal__header {
+      padding: var(--space-7) var(--space-6) 0;
+      text-align: center;
+    }
+    .modal__title {
+      margin: 0 0 8px;
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--lc-text-primary);
+    }
+    .modal__subtitle {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--lc-text-body);
+    }
+    .modal__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: var(--lc-bg-soft);
+      color: var(--lc-text-muted);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .modal__close:hover { background: var(--lc-border); color: var(--lc-text-primary); }
+    .modal__form {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+    .modal__row {
+      display: grid;
+      gap: var(--space-4);
+    }
+    @media (min-width: 480px) {
+      .modal__row--half { grid-template-columns: 1fr 1fr; }
+    }
+    .modal__field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .modal__label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--lc-text-primary);
+    }
+    .modal__input {
+      width: 100%;
+      padding: 12px 14px;
+      font-family: var(--font);
+      font-size: 0.9375rem;
+      color: var(--lc-text-primary);
+      background: var(--lc-bg-soft);
+      border: 1px solid var(--lc-border);
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .modal__input::placeholder { color: var(--lc-text-muted); }
+    .modal__input:focus {
+      border-color: var(--dm-blue);
+      box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.12);
+    }
+    .modal__submit {
+      margin-top: 8px;
+    }
+    .modal__footer-note {
+      margin: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--lc-text-muted);
+      line-height: 1.5;
+    }
+    /* Success state */
+    .modal__success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-9) var(--space-6);
+      gap: var(--space-4);
+    }
+    .modal__success.is-visible { display: flex; }
+    .modal__success-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0, 174, 239, 0.1);
+      border: 2px solid rgba(0, 174, 239, 0.3);
+      color: var(--dm-blue);
+    }
+    .modal__success-icon svg { width: 32px; height: 32px; }
+    .modal__success-title {
+      margin: 0;
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: var(--lc-text-primary);
+    }
+    .modal__success-msg {
+      margin: 0;
+      max-width: 28rem;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--lc-text-body);
+    }
+    .modal__success-close {
+      margin-top: 8px;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <a class="hero__logo" href="https://dynamicmediamusic.com/" aria-label="DM Commercial Audio home">
+        <img src="https://dm-audio.dynamicmediamusic.com/images/brand/DM_logo_2016_whiteblue.png" alt="DM Commercial Audio" width="203" height="60" loading="eager" />
+      </a>
+      <h1>You Trust Us for Background Music. We Can Help with Your Audio System, Too.</h1>
+      <p class="sub">From design and equipment to installation and support, Dynamic Media gives you one team for every location nationwide.</p>
+      <p class="trust-line">Trusted by 55,000+ businesses nationwide</p>
+      <ul class="hero-bullets">
+        <li>One team for music, audio, and installation</li>
+        <li>Factory-direct commercial audio equipment</li>
+        <li>Fixed national pricing</li>
+        <li>Free custom system design</li>
+      </ul>
+      <div class="hero-ctas">
+        <a class="btn btn--primary" href="#" data-modal-open>Get My Free Audio System Design</a>
+        <a class="btn btn--ghost" href="#" data-callmodal-open>Talk to Your Dynamic Media Rep</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="discover" aria-labelledby="discover-heading">
+    <div class="container">
+      <p class="discover__kicker">Why Restaurants Overpay for Audio</p>
+      <div class="discover__header">
+        <h2 id="discover-heading" class="discover__title">Most Restaurants Pay 2&ndash;3x More Than They Should for Commercial Audio.</h2>
+        <p class="discover__sub">Many end up buying through local resellers with added markup, inconsistent pricing, and systems that are more complex than the space actually needs.</p>
+      </div>
+      <div class="discover__grid">
+        <article class="discover__card">
+          <div class="discover__card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v10l4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="discover__card-title">Local Resellers</h3>
+          <p class="discover__card-body">Most local vendors resell other brands, which means added markup and no factory-direct pricing.</p>
+        </article>
+        <article class="discover__card">
+          <div class="discover__card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="discover__card-title">Inconsistent Local Pricing</h3>
+          <p class="discover__card-body">Pricing can vary widely from one market to the next, making it hard to know whether you are getting a fair deal.</p>
+        </article>
+        <article class="discover__card">
+          <div class="discover__card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94L6.7 20.2a2.12 2.12 0 0 1-3-3l6.73-6.73a6 6 0 0 1 7.94-7.94L14.7 6.3Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="discover__card-title">Overbuilt Systems</h3>
+          <p class="discover__card-body">Restaurants are often quoted systems that are more expensive and more complex than background music actually requires.</p>
+        </article>
+      </div>
+      <p class="packages-reassurance" style="margin-top: var(--space-7); font-size: 1.125rem; font-weight: 600; color: var(--lc-text-primary);">Dynamic Media solves this with factory-direct equipment, fixed national pricing, and one team from design to installation.</p>
+      <div class="discover__cta">
+        <a class="btn btn--primary" href="#" data-modal-open>Get My Free Audio System Design</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="one-team" id="one-team-section" aria-labelledby="team-heading">
+    <div class="container">
+      <div class="one-team-layout">
+        <div class="one-team-head">
+          <h2 id="team-heading" class="section-head">One Team from Design to Installation</h2>
+          <p class="one-team-sub">Get your system designed, installed, and supported through the same team you already trust for music.</p>
+        </div>
+        <div class="one-team-points-col">
+          <ul class="one-team-bullets">
+            <li>No coordinating between multiple vendors</li>
+            <li>No gaps between design, installation, and support</li>
+            <li>One point of contact from start to finish</li>
+            <li>Purpose-built for commercial background music</li>
+          </ul>
+        </div>
+      </div>
+      <div class="one-team-cta">
+        <a class="btn btn--primary" href="#" data-modal-open>Get My Free Audio System Design</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages-section" id="packages" aria-labelledby="packages-heading">
+    <div class="container">
+      <h2 id="packages-heading" class="section-head">Popular Systems for Restaurants Like Yours</h2>
+      <p class="packages-lead">Start with a proven setup, then we&rsquo;ll customize it for your space if needed.</p>
+
+      <div class="packages-grid">
+        <article class="package-card">
+          <h3 class="package-card__title">Essential Dining System</h3>
+          <p class="package-card__desc">A simple, reliable setup for smaller dining rooms.</p>
+          <p class="package-card__fit">Best for restaurants up to ~2,000 sq ft</p>
+          <ul class="package-card__list">
+            <li>4 to 6 speakers</li>
+            <li>Compact commercial amplifier</li>
+            <li>Even background music coverage for smaller spaces</li>
+          </ul>
+          <div class="package-card__pricing">
+            <p class="package-card__price-prefix">Professional system starting at</p>
+            <div class="package-card__price-main">
+              <span class="package-card__amount">$1,950</span>
+              <span class="package-card__installed">installed</span>
+            </div>
+            <p class="package-card__value-note">Includes equipment, design, and professional installation</p>
+          </div>
+          <a class="btn btn--on-card-primary" href="#" data-modal-open>Get My Custom Plan</a>
+        </article>
+
+        <article class="package-card package-card--popular">
+          <div class="package-card__badge-wrap">
+            <span class="package-card__badge">Most Popular</span>
+          </div>
+          <h3 class="package-card__title">Standard Restaurant System</h3>
+          <p class="package-card__desc">Balanced coverage for the dining room, bar, or main guest areas.</p>
+          <p class="package-card__fit">Best for restaurants around 2,000 to 5,000 sq ft</p>
+          <ul class="package-card__list">
+            <li>8 to 12 speakers</li>
+            <li>Commercial amplifier sized for your space</li>
+            <li>Great for dining rooms with higher traffic and more seating</li>
+          </ul>
+          <div class="package-card__pricing">
+            <p class="package-card__price-prefix">Professional system starting at</p>
+            <div class="package-card__price-main">
+              <span class="package-card__amount">$3,200</span>
+              <span class="package-card__installed">installed</span>
+            </div>
+            <p class="package-card__value-note">Includes equipment, design, and professional installation</p>
+          </div>
+          <a class="btn btn--on-card-primary" href="#" data-modal-open>Get My Custom Plan</a>
+        </article>
+
+        <article class="package-card">
+          <h3 class="package-card__title">Multi-Zone Restaurant System</h3>
+          <p class="package-card__desc">Designed for larger spaces with separate listening areas.</p>
+          <p class="package-card__fit">Best for large restaurants, bars, patios, or multi-zone layouts</p>
+          <ul class="package-card__list">
+            <li>12+ speakers</li>
+            <li>Zoned audio coverage</li>
+            <li>Ideal for dining room + bar + patio or larger footprints</li>
+          </ul>
+          <div class="package-card__pricing">
+            <p class="package-card__price-prefix">Professional system starting at</p>
+            <div class="package-card__price-main">
+              <span class="package-card__amount">$5,800</span>
+              <span class="package-card__installed">installed</span>
+            </div>
+            <p class="package-card__value-note">Includes equipment, design, and professional installation</p>
+          </div>
+          <a class="btn btn--on-card-primary" href="#" data-modal-open>Get My Custom Plan</a>
+        </article>
+      </div>
+
+      <p class="packages-reassurance">Not sure which system fits your space? We&rsquo;ll recommend the right setup at no cost.</p>
+      <div class="packages-cta">
+        <a class="btn btn--primary" href="#" data-modal-open>Get My Free Audio Design</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <p class="testimonials__trust-badge">20+ Years in Background Music and Business Audio</p>
+      <h2 id="testimonials-heading" class="section-head">Why Customers Trust Dynamic Media Beyond Music</h2>
+      <p class="testimonials__sub">From design and installation to ongoing support, our customers count on us to make audio easy.</p>
+      <div class="testimonials__grid">
+        <figure class="testimonials__card">
+          <span class="testimonials__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="testimonials__quote">
+            <p>I honestly did not know Dynamic Media handled audio systems too. Once we started talking through it, it was pretty clear they had this down. They came back with a design that fit the space, got it installed, and made the whole thing feel easy.</p>
+          </blockquote>
+          <figcaption class="testimonials__cite">
+            <span class="testimonials__name">Kevin Marshall</span>
+            <span class="testimonials__role">Owner, Daughtry House Restaurant</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonials__card">
+          <span class="testimonials__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="testimonials__quote">
+            <p>We have worked with plenty of vendors over the years, and most projects take more time and back-and-forth than they should. This one did not. Our rep kept things moving, the recommendations made sense, and the install was smooth from start to finish.</p>
+          </blockquote>
+          <figcaption class="testimonials__cite">
+            <span class="testimonials__name">Melissa Grant</span>
+            <span class="testimonials__role">Director of Operations, Harbor Street Hospitality Group</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonials__card">
+          <span class="testimonials__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="testimonials__quote">
+            <p>What I appreciated most was not having to manage every detail myself. I told them what we were trying to accomplish, and they took it from there. The system sounds great, and the process was a lot less painful than I expected.</p>
+          </blockquote>
+          <figcaption class="testimonials__cite">
+            <span class="testimonials__name">Andre Collins</span>
+            <span class="testimonials__role">General Manager, North Ridge Fitness Club</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonials__card">
+          <span class="testimonials__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="testimonials__quote">
+            <p>We were opening another location and needed something reliable without turning it into a big project for our team. Dynamic Media made it simple. One call, a clear plan, and a system that was up and running when we needed it.</p>
+          </blockquote>
+          <figcaption class="testimonials__cite">
+            <span class="testimonials__name">Sara Nguyen</span>
+            <span class="testimonials__role">Facilities Manager, Elm &amp; Co. Retail</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="triggers" aria-labelledby="triggers-heading">
+    <div class="container">
+      <h2 id="triggers-heading" class="section-head">When Does It Make Sense to Upgrade Your Audio?</h2>
+      <p class="triggers__sub">If any of these situations sound familiar, this is a good time to plan your next system.</p>
+      <div class="triggers__grid">
+        <div class="triggers__card">Opening a New Location</div>
+        <div class="triggers__card">Renovating Your Space</div>
+        <div class="triggers__card">Replacing Aging Equipment</div>
+        <div class="triggers__card">Expanding Your Dining Area</div>
+        <div class="triggers__card">Adding a Bar, Patio, or Second Zone</div>
+        <div class="triggers__card">Standardizing Across Multiple Locations</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" aria-labelledby="process-heading">
+    <div class="container">
+      <h2 id="process-heading" class="section-head">Getting Started Is Easier Than You Think</h2>
+      <div class="process-grid">
+        <div class="process-col">
+          <div class="process-num" aria-hidden="true">1</div>
+          <h3>Tell Us About Your Space</h3>
+          <p>Share your floor plan, layout, or project goals.</p>
+        </div>
+        <div class="process-col">
+          <div class="process-num" aria-hidden="true">2</div>
+          <h3>Get a Free Audio Design</h3>
+          <p>We recommend the right system for your space and usage.</p>
+        </div>
+        <div class="process-col">
+          <div class="process-num" aria-hidden="true">3</div>
+          <h3>Install Nationwide</h3>
+          <p>Our team coordinates installation and support through our national technician network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact">
+    <div class="container">
+      <h2>The Easiest Upgrade Your Restaurant Will Ever Make</h2>
+      <p class="final__sub">Get a custom system designed for your space, installed nationwide, and supported by one team.</p>
+      <div class="final-ctas">
+        <div class="final-cta-row">
+          <a class="btn btn--primary" href="#" data-modal-open>Get My Free Audio System Design</a>
+          <a class="btn btn--ghost-final" href="#" data-callmodal-open>Talk to Your Dedicated Sales Rep</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__shell">
+      <div class="site-footer__logos">
+        <a class="site-footer__logo" href="https://dynamicmediamusic.com/" aria-label="Dynamic Media">
+          <img src="../assets/DM_logo_2016_whiteblue.png" alt="" width="200" height="56" decoding="async" />
+        </a>
+        <a class="site-footer__commercial-link" href="https://dm-audio.dynamicmediamusic.com/" aria-label="DM Commercial Audio">
+          <span class="site-footer__commercial-lockup">
+            <span class="site-footer__commercial-dm">DM</span>
+            <span class="site-footer__commercial-meta">
+              <span class="site-footer__commercial-sub">Commercial</span>
+              <span class="site-footer__commercial-audio">AUDIO</span>
+            </span>
+          </span>
+        </a>
+        <a class="site-footer__partner site-footer__partner--soundtrack" href="https://www.soundtrackyourbrand.com/" rel="noopener noreferrer" target="_blank">
+          <span class="site-footer__reseller">Reseller of</span>
+          <span class="site-footer__soundtrack-word">
+            <svg class="site-footer__soundtrack-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.35" />
+              <path d="M12 6v12M8 9v6M16 9v6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            </svg>
+            Soundtrack
+          </span>
+        </a>
+        <a class="site-footer__partner site-footer__partner--sirius" href="https://www.siriusxm.com/business" rel="noopener noreferrer" target="_blank">
+          <span class="site-footer__sirius-main">SiriusXM</span>
+          <span class="site-footer__sirius-sub">FOR BUSINESS</span>
+        </a>
+      </div>
+      <div class="site-footer__bar">
+        <p class="site-footer__copy">&copy; 2026 Dynamic Media</p>
+        <nav class="site-footer__legal" aria-label="Legal">
+          <a href="https://dynamicmediamusic.com/privacy-policy/">Privacy Policy</a>
+          <a href="https://dynamicmediamusic.com/terms-and-conditions/">Terms and Conditions</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="callModal" role="dialog" aria-modal="true" aria-labelledby="call-modal-title">
+    <div class="modal">
+      <button class="modal__close" aria-label="Close" data-callmodal-close>&times;</button>
+
+      <div class="modal__header" id="callModalFormHeader">
+        <h2 class="modal__title" id="call-modal-title">Talk to Your Dedicated Sales Rep</h2>
+        <p class="modal__subtitle">Leave your details and your dedicated Dynamic Media rep will reach out to you directly.</p>
+      </div>
+
+      <form class="modal__form" id="callForm">
+        <div class="modal__row modal__row--half">
+          <div class="modal__field">
+            <label class="modal__label" for="callFirstName">First Name</label>
+            <input class="modal__input" type="text" id="callFirstName" name="firstName" placeholder="First name" required />
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="callLastName">Last Name</label>
+            <input class="modal__input" type="text" id="callLastName" name="lastName" placeholder="Last name" required />
+          </div>
+        </div>
+        <div class="modal__field">
+          <label class="modal__label" for="callBusinessName">Business Name</label>
+          <input class="modal__input" type="text" id="callBusinessName" name="businessName" placeholder="Your business name" required />
+        </div>
+        <div class="modal__row modal__row--half">
+          <div class="modal__field">
+            <label class="modal__label" for="callPhone">Phone Number</label>
+            <input class="modal__input" type="tel" id="callPhone" name="phone" placeholder="(555) 555-5555" required />
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="callEmail">Email</label>
+            <input class="modal__input" type="email" id="callEmail" name="email" placeholder="you@business.com" required />
+          </div>
+        </div>
+        <button class="btn btn--primary modal__submit" type="submit">Request a Call Back</button>
+        <p class="modal__footer-note">No obligation. Your dedicated rep will call you directly.</p>
+      </form>
+
+      <div class="modal__success" id="callModalSuccess">
+        <div class="modal__success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 class="modal__success-title">We&rsquo;ll Be in Touch</h2>
+        <p class="modal__success-msg">Thank you! Your dedicated Dynamic Media rep will reach out to you shortly.</p>
+        <button class="btn btn--primary modal__success-close" data-callmodal-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal__close" aria-label="Close" data-modal-close>&times;</button>
+
+      <div class="modal__header" id="modalFormHeader">
+        <h2 class="modal__title" id="modal-title">Get Your Free Audio Design</h2>
+        <p class="modal__subtitle">Tell us a little about your project, and your dedicated Dynamic Media rep will follow up within one business day.</p>
+      </div>
+
+      <form class="modal__form" id="contactForm">
+        <div class="modal__row modal__row--half">
+          <div class="modal__field">
+            <label class="modal__label" for="firstName">First Name</label>
+            <input class="modal__input" type="text" id="firstName" name="firstName" placeholder="First name" required />
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="lastName">Last Name</label>
+            <input class="modal__input" type="text" id="lastName" name="lastName" placeholder="Last name" required />
+          </div>
+        </div>
+        <div class="modal__field">
+          <label class="modal__label" for="businessName">Business Name</label>
+          <input class="modal__input" type="text" id="businessName" name="businessName" placeholder="Your business name" required />
+        </div>
+        <div class="modal__row modal__row--half">
+          <div class="modal__field">
+            <label class="modal__label" for="phone">Phone Number</label>
+            <input class="modal__input" type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="email">Email</label>
+            <input class="modal__input" type="email" id="email" name="email" placeholder="you@business.com" required />
+          </div>
+        </div>
+        <button class="btn btn--primary modal__submit" type="submit">Request My Free Audio Design</button>
+        <p class="modal__footer-note">No obligation. Your dedicated Dynamic Media rep will follow up directly.</p>
+      </form>
+
+      <div class="modal__success" id="modalSuccess">
+        <div class="modal__success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 class="modal__success-title">We&rsquo;ve Received Your Request</h2>
+        <p class="modal__success-msg">Thank you! A member of our team will reach out within one business day to discuss your audio system design.</p>
+        <button class="btn btn--primary modal__success-close" data-modal-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('contactModal');
+      var form = document.getElementById('contactForm');
+      var formHeader = document.getElementById('modalFormHeader');
+      var success = document.getElementById('modalSuccess');
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        var first = form.querySelector('input');
+        if (first) setTimeout(function () { first.focus(); }, 100);
+      }
+
+      function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      function resetModal() {
+        form.reset();
+        form.style.display = '';
+        formHeader.style.display = '';
+        success.classList.remove('is-visible');
+      }
+
+      document.querySelectorAll('[data-modal-open]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          resetModal();
+          openModal(e);
+        });
+      });
+
+      document.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          closeModal();
+          setTimeout(resetModal, 300);
+        });
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) {
+          closeModal();
+          setTimeout(resetModal, 300);
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+          closeModal();
+          setTimeout(resetModal, 300);
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.style.display = 'none';
+        formHeader.style.display = 'none';
+        success.classList.add('is-visible');
+      });
+    })();
+
+    (function () {
+      var overlay = document.getElementById('callModal');
+      var form = document.getElementById('callForm');
+      var formHeader = document.getElementById('callModalFormHeader');
+      var success = document.getElementById('callModalSuccess');
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        var first = form.querySelector('input');
+        if (first) setTimeout(function () { first.focus(); }, 100);
+      }
+
+      function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      function resetModal() {
+        form.reset();
+        form.style.display = '';
+        formHeader.style.display = '';
+        success.classList.remove('is-visible');
+      }
+
+      document.querySelectorAll('[data-callmodal-open]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          resetModal();
+          openModal(e);
+        });
+      });
+
+      document.querySelectorAll('[data-callmodal-close]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          closeModal();
+          setTimeout(resetModal, 300);
+        });
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) {
+          closeModal();
+          setTimeout(resetModal, 300);
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+          closeModal();
+          setTimeout(resetModal, 300);
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.style.display = 'none';
+        formHeader.style.display = 'none';
+        success.classList.add('is-visible');
+      });
+    })();
+  </script>
+</body>
+</html>
