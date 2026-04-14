@@ -974,6 +974,64 @@
       text-underline-offset: 3px;
     }
 
+    /* FAQ */
+    .faq {
+      padding: var(--space-9) var(--space-4);
+      background: var(--lc-bg-white);
+      border-bottom: 1px solid var(--lc-border);
+    }
+    @media (min-width: 768px) { .faq { padding-left: 32px; padding-right: 32px; } }
+    .faq__list {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+    .faq__item {
+      border-bottom: 1px solid var(--lc-border);
+    }
+    .faq__item:last-child { border-bottom: none; }
+    .faq__question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      width: 100%;
+      padding: var(--space-5) 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--lc-text-primary);
+      text-align: left;
+    }
+    .faq__question:hover { color: var(--dm-blue); }
+    .faq__icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.25s ease;
+      color: var(--dm-blue);
+    }
+    .faq__item.is-open .faq__icon { transform: rotate(45deg); }
+    .faq__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq__item.is-open .faq__answer {
+      max-height: 600px;
+    }
+    .faq__answer-inner {
+      padding: 0 0 var(--space-5);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--lc-text-body);
+    }
+
     /* Contact Modal */
     .modal-overlay {
       display: none;
@@ -1378,6 +1436,95 @@
     </div>
   </section>
 
+  <section class="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <h2 id="faq-heading" class="section-head">Frequently Asked Questions</h2>
+      <ul class="faq__list">
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Do you keep the equipment in stock? How long does it take to ship?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">Yes. We maintain full inventory of our commercial audio equipment, so once your system design is complete, we pull directly from our warehouse and ship the same day or next day in most cases. Because we manufacture the equipment ourselves and are vertically integrated, you do not run into the same supply chain delays that often come with third-party vendors.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Is installation included in the price?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">We provide nationwide installation in every U.S. ZIP code through a network of 8,500 certified technicians. Installation is priced separately from the package shown above, but we offer fixed installation pricing across the United States. When you request your audio system design, we will provide your installation rate at that time.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            How long does installation usually take?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">For standard spaces, most installations with up to 12 speakers take less than a day, and many take only a few hours. Our certified technicians are familiar with the technology and the installation process. Non-standard spaces, such as historic buildings or locations with unusual access requirements, may take longer.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            What if I already have speakers or existing equipment?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">In many cases, we can reuse existing speakers or equipment, especially if you are expanding your system. Because commercial audio equipment is often compatible across systems, we can evaluate what you have and recommend whether it makes sense to keep it or replace it.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Do you offer a warranty on the equipment?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">Yes. Our equipment includes a one-year manufacturer&rsquo;s warranty. We also offer an optional five-year extended warranty.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            How does your pricing compare to local audio vendors?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">In many cases, our pricing is significantly lower than local vendors because we manufacture the equipment ourselves. That means you are working directly with the factory instead of buying through a reseller with added markup. Our systems are designed specifically for background music, with secure, simple-to-use equipment built to run 24/7 for the long term, without the unnecessary complexity that often comes with overbuilt local solutions.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Can you support multiple locations nationwide?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">Yes. We install in every U.S. ZIP code through our nationwide network of 8,500 installers. We support everything from single-location projects to large multi-location rollouts, backed by more than 20 years of experience, dedicated project management, and nationwide installation coverage.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Do you handle service and repairs after installation?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">Yes. We handle moves, adds, changes, service calls, and repairs after installation. If something needs attention, we can dispatch a technician to get your system back up and running.</p>
+          </div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            What kind of spaces do you design systems for?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p class="faq__answer-inner">We design audio systems for virtually any commercial space, including restaurants, retail stores, small businesses, and large-format locations. We can support a wide range of environments, including drop ceilings, open ceilings, and pendant speaker layouts.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <section class="final" id="contact">
     <div class="container">
       <h2>The Easiest Upgrade Your Restaurant Will Ever Make</h2>
@@ -1651,6 +1798,17 @@
         form.style.display = 'none';
         formHeader.style.display = 'none';
         success.classList.add('is-visible');
+      });
+    })();
+
+    (function () {
+      document.querySelectorAll('.faq__question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.faq__item');
+          var isOpen = item.classList.contains('is-open');
+          item.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', !isOpen);
+        });
       });
     })();
   </script>
